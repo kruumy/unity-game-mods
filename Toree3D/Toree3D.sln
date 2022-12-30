@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33209.295
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemovePixelationFilter", "RemovePixelationFilter\RemovePixelationFilter.csproj", "{74217B1E-4BDE-401E-A548-5663E78E93F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOVModifier", "FOVModifier\FOVModifier.csproj", "{12F9337D-917A-4C42-8C7F-C803836B0A13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74217B1E-4BDE-401E-A548-5663E78E93F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74217B1E-4BDE-401E-A548-5663E78E93F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74217B1E-4BDE-401E-A548-5663E78E93F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74217B1E-4BDE-401E-A548-5663E78E93F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F9337D-917A-4C42-8C7F-C803836B0A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F9337D-917A-4C42-8C7F-C803836B0A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F9337D-917A-4C42-8C7F-C803836B0A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F9337D-917A-4C42-8C7F-C803836B0A13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE1B5FFD-F13E-46E6-A914-95EE37EAB5DF}
+	EndGlobalSection
+EndGlobal

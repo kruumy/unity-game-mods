@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalMod", "ExternalMod\src\ExternalMod.csproj", "{85EBB8D5-375E-41A6-8D76-661CCACE8EC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly-CSharp", "Assembly-CSharp\src\Assembly-CSharp.csproj", "{DD90FE16-A633-43ED-829F-AFEAFADD5E67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MelonMods", "MelonMods", "{D309C0D1-9C30-4C38-AD1B-97D512150CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveInvisibleWalls", "MelonMods\RemoveInvisibleWalls\src\RemoveInvisibleWalls.csproj", "{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveFoliage", "MelonMods\RemoveFoliage\src\RemoveFoliage.csproj", "{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unstucker", "MelonMods\Unstucker\src\Unstucker\Unstucker.csproj", "{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarEx", "MelonMods\CarEx\src\CarEx\CarEx.csproj", "{14642451-0548-4A10-B473-5AB4627A2E67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85EBB8D5-375E-41A6-8D76-661CCACE8EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85EBB8D5-375E-41A6-8D76-661CCACE8EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85EBB8D5-375E-41A6-8D76-661CCACE8EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85EBB8D5-375E-41A6-8D76-661CCACE8EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD90FE16-A633-43ED-829F-AFEAFADD5E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD90FE16-A633-43ED-829F-AFEAFADD5E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD90FE16-A633-43ED-829F-AFEAFADD5E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD90FE16-A633-43ED-829F-AFEAFADD5E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14642451-0548-4A10-B473-5AB4627A2E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14642451-0548-4A10-B473-5AB4627A2E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14642451-0548-4A10-B473-5AB4627A2E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14642451-0548-4A10-B473-5AB4627A2E67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7} = {D309C0D1-9C30-4C38-AD1B-97D512150CED}
+		{0131C9C4-AD25-4BB3-9C2C-6E3CB1E3C340} = {D309C0D1-9C30-4C38-AD1B-97D512150CED}
+		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A} = {D309C0D1-9C30-4C38-AD1B-97D512150CED}
+		{14642451-0548-4A10-B473-5AB4627A2E67} = {D309C0D1-9C30-4C38-AD1B-97D512150CED}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1C77C98-3B73-423C-A10D-139BB87972C3}
+	EndGlobalSection
+EndGlobal

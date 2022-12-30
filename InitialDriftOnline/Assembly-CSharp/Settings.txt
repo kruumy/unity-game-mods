@@ -1,0 +1,4 @@
+cheatMenu=false
+fov=80
+freeShops=true
+lvl42069=false
