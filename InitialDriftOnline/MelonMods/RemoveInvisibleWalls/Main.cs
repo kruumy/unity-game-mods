@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace RemoveInvisibleWalls
 {
-    public class MyMod : MelonMod
+    public class Main : MelonMod
     {
         private static string[] BlackList = new string[]
         {
