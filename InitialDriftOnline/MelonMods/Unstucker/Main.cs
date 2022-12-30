@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Unstucker
 {
-    public class MyMod : MelonMod
+    public class Main : MelonMod
     {
         public SRFreeCam FreeCam => Object.FindObjectOfType<SRFreeCam>();
         public SRAdminTools AdminTools => Object.FindObjectOfType<SRAdminTools>();
