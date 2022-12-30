@@ -1,1 +1,0 @@
-Hides the fact you are modded from the game.

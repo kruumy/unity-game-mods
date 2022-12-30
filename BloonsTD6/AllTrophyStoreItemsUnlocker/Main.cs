@@ -21,7 +21,7 @@ namespace AllTrophyStoreItemsUnlocker
         }
 
         [HarmonyPatch(typeof(MainMenu), "Open")]
-        public class TitleScreenPatch
+        public class MainMenuOpen
         {
             [HarmonyPostfix]
             public static void Postfix()
