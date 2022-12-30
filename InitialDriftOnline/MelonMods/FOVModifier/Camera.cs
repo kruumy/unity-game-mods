@@ -80,8 +80,7 @@ namespace FOVModifier
             set
             {
                 FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (fieldInfo != null)
-                    fieldInfo.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
+                fieldInfo?.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
             }
         }
     }
