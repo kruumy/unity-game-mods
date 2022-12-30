@@ -11,17 +11,17 @@ namespace FOVModifier
                 if (TPSMinimumFOV != null)
                     return TPSMinimumFOV;
                 else if (targetFieldOfView != null)
-                    return targetFieldOfView - 15.0f;
+                    return targetFieldOfView - 10.0f;
                 else if (TPSMaximumFOV != null)
-                    return TPSMaximumFOV - 30.0f;
+                    return TPSMaximumFOV - 20.0f;
                 else
                     return null;
             }
             set
             {
                 TPSMinimumFOV = value;
-                targetFieldOfView = value + 15.0f;
-                TPSMaximumFOV = value + 30.0f;
+                targetFieldOfView = value + 10.0f;
+                TPSMaximumFOV = value + 20.0f;
             }
         }
         private static float? TPSMinimumFOV
@@ -72,6 +72,8 @@ namespace FOVModifier
         {
             get
             {
+                if (RCC_SceneManager.Instance.activePlayerCamera == null)
+                    return null;
                 FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
                 if (fieldInfo == null)
                     return null;
@@ -79,8 +81,11 @@ namespace FOVModifier
             }
             set
             {
-                FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
-                fieldInfo?.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
+                if (RCC_SceneManager.Instance.activePlayerCamera != null)
+                {
+                    FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
+                    fieldInfo?.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
+                }
             }
         }
     }
