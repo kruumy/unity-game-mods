@@ -26,25 +26,62 @@ namespace FOVModifier
         }
         private static float? TPSMinimumFOV
         {
-            get => RCC_SceneManager.Instance.activePlayerCamera.TPSMinimumFOV;
-            set => RCC_SceneManager.Instance.activePlayerCamera.TPSMinimumFOV = (float)value;
+            get
+            {
+                try
+                {
+                    return RCC_SceneManager.Instance.activePlayerCamera.TPSMinimumFOV;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            set
+            {
+                if (value != null)
+                {
+                    RCC_SceneManager.Instance.activePlayerCamera.TPSMinimumFOV = (float)value;
+                }
+            }
         }
         private static float? TPSMaximumFOV
         {
-            get => RCC_SceneManager.Instance.activePlayerCamera.TPSMaximumFOV;
-            set => RCC_SceneManager.Instance.activePlayerCamera.TPSMaximumFOV = (float)value;
+            get
+            {
+                try
+                {
+                    return RCC_SceneManager.Instance.activePlayerCamera.TPSMaximumFOV;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+
+            set
+            {
+                if (value != null)
+                {
+                    RCC_SceneManager.Instance.activePlayerCamera.TPSMaximumFOV = (float)value;
+                }
+            }
         }
         private static float? targetFieldOfView
         {
             get
             {
                 FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (fieldInfo == null)
+                    return null;
                 return (float)fieldInfo.GetValue(RCC_SceneManager.Instance.activePlayerCamera);
             }
             set
             {
                 FieldInfo fieldInfo = typeof(RCC_Camera).GetField("targetFieldOfView", BindingFlags.NonPublic | BindingFlags.Instance);
-                fieldInfo.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
+                if (fieldInfo != null)
+                    fieldInfo.SetValue(RCC_SceneManager.Instance.activePlayerCamera, value);
             }
         }
     }
