@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: MelonInfo(typeof(MyMod), "RemoveInvisibleWalls", "1.0.0", "Kruumy")]
+[assembly: MelonInfo(typeof(RemoveInvisibleWalls.Main), "RemoveInvisibleWalls", "1.0.0", "Kruumy")]
 [assembly: AssemblyTitle("RemoveInvisibleWalls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

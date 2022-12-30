@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using Unstucker;
 
-[assembly: MelonInfo(typeof(MyMod), "Unstucker", "1.0.0", "Kruumy")]
+[assembly: MelonInfo(typeof(Unstucker.Main), "Unstucker", "1.0.0", "Kruumy")]
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
