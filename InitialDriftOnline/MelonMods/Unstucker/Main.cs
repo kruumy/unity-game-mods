@@ -10,10 +10,7 @@ namespace Unstucker
         public RCC_CarControllerV3 PlayerCar => RCC_SceneManager.Instance.activePlayerVehicle;
         public Vector3 PlayerCarPostion
         {
-            get => new Vector3(
-                RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform.position.x,
-                RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform.position.y,
-                RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform.position.z);
+            get => RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform.position;
             set => RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform.position = value;
         }
         private readonly float Increment = 10f;
