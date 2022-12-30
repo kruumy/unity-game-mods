@@ -74,14 +74,7 @@ namespace Unstucker
             }
             else if (Input.GetKeyDown(KeyCode.RightAlt))
             {
-                if (FreeCam.FreeCamEnabled)
-                {
-                    FreeCam.FreeCamEnabled = false;
-                }
-                else
-                {
-                    FreeCam.FreeCamEnabled = true;
-                }
+                FreeCam.FreeCamEnabled = !FreeCam.FreeCamEnabled;
             }
         }
     }
