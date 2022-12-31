@@ -17,7 +17,7 @@ namespace SaveEditor.Menu.Contents.SetMoney
         {
             if (GUI.Button(Rectangle, "Set Money"))
             {
-                Save.MyBalance = int.Parse(TextField.Text);
+                PlayerSaveWrapper.MyBalance = int.Parse(TextField.Text);
             }
         }
     }

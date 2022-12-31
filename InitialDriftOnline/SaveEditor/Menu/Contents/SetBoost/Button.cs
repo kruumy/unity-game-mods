@@ -17,7 +17,7 @@ namespace SaveEditor.Menu.Contents.SetBoost
         {
             if (GUI.Button(Dimensions, "Set Boost"))
             {
-                Save.BoostQuantity = int.Parse(TextField.Text);
+                PlayerSaveWrapper.BoostQuantity = int.Parse(TextField.Text);
             }
         }
     }

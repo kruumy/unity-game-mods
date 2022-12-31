@@ -5,7 +5,7 @@ namespace SaveEditor.Menu.Contents.SetLevel
 {
     internal static class TextField
     {
-        internal static string Text { get; private set; } = Save.MyLvl.ToString();
+        internal static string Text { get; private set; } = PlayerSaveWrapper.MyLvl.ToString();
 
         internal static readonly Rect Dimensions = new Rect
                 (

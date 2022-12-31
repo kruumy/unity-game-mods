@@ -5,7 +5,7 @@ namespace SaveEditor.Menu.Contents.SetBoost
 {
     internal static class TextField
     {
-        internal static string Text { get; private set; } = Save.BoostQuantity.ToString();
+        internal static string Text { get; private set; } = PlayerSaveWrapper.BoostQuantity.ToString();
 
         internal static readonly Rect Dimensions = new Rect
                 (

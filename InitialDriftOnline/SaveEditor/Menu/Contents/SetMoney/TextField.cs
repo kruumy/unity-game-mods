@@ -5,7 +5,7 @@ namespace SaveEditor.Menu.Contents.SetMoney
 {
     internal static class TextField
     {
-        internal static string Text { get; private set; } = Save.MyBalance.ToString();
+        internal static string Text { get; private set; } = PlayerSaveWrapper.MyBalance.ToString();
 
         internal static readonly Rect Dimensions = new Rect
                 (

@@ -17,7 +17,7 @@ namespace SaveEditor.Menu.Contents.SetLevel
         {
             if (GUI.Button(Dimensions, "Set Level"))
             {
-                Save.MyLvl = int.Parse(TextField.Text);
+                PlayerSaveWrapper.MyLvl = int.Parse(TextField.Text);
             }
         }
     }

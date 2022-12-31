@@ -14,7 +14,7 @@ namespace SaveEditor
             {
                 if (UnityEngine.Object.FindObjectOfType<LeaderboardUsersManager>().BESTLVL.LeaderboardId.Value == hSteamLeaderboard)
                 {
-                    nScore = Save.MyLvl;
+                    nScore = PlayerSaveWrapper.MyLvl;
                 }
             }
         }
@@ -31,13 +31,13 @@ namespace SaveEditor
                         case "MyLvl":
                             {
                                 MelonLogger.Msg($"Patched Invalid Level {value}");
-                                value = Save.MyLvl;
+                                value = PlayerSaveWrapper.MyLvl;
                                 break;
                             }
                         case "XP":
                             {
                                 MelonLogger.Msg($"Patched Invalid XP {value}");
-                                value = Save.XP;
+                                value = PlayerSaveWrapper.XP;
                                 break;
                             }
                     }

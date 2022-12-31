@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unstucker", "Unstucker\Unstucker.csproj", "{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatEditor", "StatEditor\StatEditor.csproj", "{3EA8FFA6-B068-4315-A038-431221DFE41D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

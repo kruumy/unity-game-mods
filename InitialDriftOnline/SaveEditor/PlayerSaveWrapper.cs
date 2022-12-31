@@ -3,7 +3,7 @@ using MelonLoader;
 
 namespace SaveEditor
 {
-    public static class Save
+    public static class PlayerSaveWrapper
     {
         public static int MyLvl
         {
