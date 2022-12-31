@@ -5,20 +5,17 @@ namespace SaveEditor
 {
     public class Main : MelonMod
     {
-        private bool IsMenuOpen = false;
         public override void OnLateUpdate()
         {
             if (Input.GetKeyDown(KeyCode.BackQuote))
             {
-                if (!IsMenuOpen)
+                if (!Menu.Menu.IsOpen)
                 {
-                    MelonEvents.OnGUI.Subscribe(Menu.Menu.Draw);
-                    IsMenuOpen = true;
+                    Menu.Menu.Enable();
                 }
                 else
                 {
-                    MelonEvents.OnGUI.Unsubscribe(Menu.Menu.Draw);
-                    IsMenuOpen = false;
+                    Menu.Menu.Disable();
                 }
             }
         }

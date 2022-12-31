@@ -7,7 +7,7 @@ namespace SaveEditor.Menu.Contents.SetBoost
     {
         internal static string Text { get; private set; } = Save.BoostQuantity.ToString();
 
-        internal readonly static Rect Rectangle = new Rect
+        internal static readonly Rect Rectangle = new Rect
                 (
                 Button.Rectangle.x + Button.Rectangle.width + Margin,
                 Button.Rectangle.y,

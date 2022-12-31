@@ -13,6 +13,7 @@ namespace SaveEditor
                 ObscuredPrefs.SetInt("XP", value * 100);
             }
         }
+
         public static int XP
         {
             get => ObscuredPrefs.GetInt("XP");
@@ -22,11 +23,13 @@ namespace SaveEditor
                 ObscuredPrefs.SetInt("XP", value);
             }
         }
+
         public static int MyBalance
         {
             get => ObscuredPrefs.GetInt("MyBalance");
             set => ObscuredPrefs.SetInt("MyBalance", value);
         }
+
         public static int BoostQuantity
         {
             get => ObscuredPrefs.GetInt("BoostQuantity");
