@@ -77,6 +77,7 @@
     <Compile Include="Menu\Contents\SetMoney\Button.cs" />
     <Compile Include="Menu\Contents\SetMoney\TextField.cs" />
     <Compile Include="Menu\Menu.cs" />
+    <Compile Include="Patches.cs" />
     <Compile Include="Save.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
