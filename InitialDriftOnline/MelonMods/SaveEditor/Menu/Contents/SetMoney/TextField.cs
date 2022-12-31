@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using static SaveEditor.Menu.Contents.Constants;
+using static SaveEditor.Menu.Menu;
 
 namespace SaveEditor.Menu.Contents.SetMoney
 {
