@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace StatEditor.Menu.Contents
 {
@@ -8,6 +9,11 @@ namespace StatEditor.Menu.Contents
         {
             GUILayout.Label($"{label} = {(int)sliderValue}");
             sliderValue = GUILayout.HorizontalSlider(sliderValue, sliderMin, sliderMax);
+        }
+        public static void SliderWithLabel(float sliderValue, Action<float> sliderValueSetter, float sliderMin, float sliderMax, string label)
+        {
+            GUILayout.Label($"{label} = {(int)sliderValue}");
+            sliderValueSetter.Invoke(GUILayout.HorizontalSlider(sliderValue, sliderMin, sliderMax));
         }
     }
 }

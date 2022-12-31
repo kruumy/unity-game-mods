@@ -5,41 +5,37 @@ namespace SaveEditor.Menu
 {
     internal static class Menu
     {
-        internal static Rect Dimensions = new Rect(10, 10, 300, 115);
-        internal static readonly int Margin = 5;
-        internal static readonly int TitleBarHeight = 15;
-        internal static readonly int RowHeight = 25;
+        internal static Rect Dimensions = new Rect(10, 10, 300, 100);
         private static readonly int WindowID = new System.Random().Next();
-
         internal static bool IsOpen { get; private set; } = false;
 
         internal static void Open()
         {
             MelonEvents.OnGUI.Subscribe(Draw);
             IsOpen = true;
-            Cursor.visible = true;
+
+            MyBalanceText = PlayerSaveWrapper.MyBalance.ToString();
+            MyLvlText = PlayerSaveWrapper.MyLvl.ToString();
+            BoostQuantityText = PlayerSaveWrapper.BoostQuantity.ToString();
         }
 
         internal static void Close()
         {
             MelonEvents.OnGUI.Unsubscribe(Draw);
             IsOpen = false;
-            Cursor.visible = false;
         }
 
+
+        private static string MyBalanceText;
+        private static string MyLvlText;
+        private static string BoostQuantityText;
         private static void Draw()
         {
             Dimensions = GUI.Window(WindowID, Dimensions, (int windowId) =>
             {
-                Contents.SetMoney.Button.Draw();
-                Contents.SetMoney.TextField.Draw();
-
-                Contents.SetLevel.Button.Draw();
-                Contents.SetLevel.TextField.Draw();
-
-                Contents.SetBoost.Button.Draw();
-                Contents.SetBoost.TextField.Draw();
-
+                Contents.Generics.ButtonAndTextField(ref MyBalanceText, x => PlayerSaveWrapper.MyBalance = x, "Set MyBalance");
+                Contents.Generics.ButtonAndTextField(ref MyLvlText, x => PlayerSaveWrapper.MyLvl = x, "Set MyLvl");
+                Contents.Generics.ButtonAndTextField(ref BoostQuantityText, x => PlayerSaveWrapper.BoostQuantity = x, "Set BoostQuantity");
                 GUI.DragWindow(new Rect(0, 0, Dimensions.width, 20));
             }, "Save Editor");
         }

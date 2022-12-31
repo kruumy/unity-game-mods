@@ -70,12 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
-    <Compile Include="Menu\Contents\SetBoost\Button.cs" />
-    <Compile Include="Menu\Contents\SetBoost\TextField.cs" />
-    <Compile Include="Menu\Contents\SetLevel\Button.cs" />
-    <Compile Include="Menu\Contents\SetLevel\TextField.cs" />
-    <Compile Include="Menu\Contents\SetMoney\Button.cs" />
-    <Compile Include="Menu\Contents\SetMoney\TextField.cs" />
+    <Compile Include="Menu\Contents\Generics.cs" />
     <Compile Include="Menu\Menu.cs" />
     <Compile Include="Patches.cs" />
     <Compile Include="PlayerSaveWrapper.cs" />

@@ -65,8 +65,6 @@
     <Compile Include="Menu\Contents\Generics.cs" />
     <Compile Include="CarControllerExtensions.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Menu\Contents\orgSteerAngle\HorizontalSlider.cs" />
-    <Compile Include="Menu\Contents\orgSteerAngle\Label.cs" />
     <Compile Include="Menu\Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
