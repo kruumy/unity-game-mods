@@ -7,17 +7,17 @@ namespace SaveEditor.Menu.Contents.SetBoost
     {
         internal static string Text { get; private set; } = Save.BoostQuantity.ToString();
 
-        internal static readonly Rect Rectangle = new Rect
+        internal static readonly Rect Dimensions = new Rect
                 (
-                Button.Rectangle.x + Button.Rectangle.width + Margin,
-                Button.Rectangle.y,
+                Button.Dimensions.x + Button.Dimensions.width + Margin,
+                Button.Dimensions.y,
                 150,
                 RowHeight
                 );
 
         internal static void Draw()
         {
-            Text = GUI.TextField(Rectangle, Text);
+            Text = GUI.TextField(Dimensions, Text);
         }
     }
 }

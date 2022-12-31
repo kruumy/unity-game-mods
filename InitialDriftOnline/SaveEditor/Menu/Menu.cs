@@ -5,7 +5,7 @@ namespace SaveEditor.Menu
 {
     internal static class Menu
     {
-        internal static Rect BaseMenu = new Rect(10, 10, 300, 500);
+        internal static Rect Dimensions = new Rect(10, 10, 300, 500);
         internal static readonly int Margin = 5;
         internal static readonly int TitleBarHeight = 10;
         internal static readonly int RowHeight = 25;
@@ -27,7 +27,7 @@ namespace SaveEditor.Menu
 
         private static void Draw()
         {
-            BaseMenu = GUI.Window(WindowID, BaseMenu, (int windowId) =>
+            Dimensions = GUI.Window(WindowID, Dimensions, (int windowId) =>
             {
                 Contents.SetMoney.Button.Draw();
                 Contents.SetMoney.TextField.Draw();

@@ -7,8 +7,8 @@ namespace SaveEditor.Menu.Contents.SetMoney
     {
         internal static readonly Rect Rectangle = new Rect
                 (
-                BaseMenu.x + Margin,
-                BaseMenu.y + TitleBarHeight + Margin + RowHeight * 0 + Margin * 0,
+                Dimensions.x + Margin,
+                Dimensions.y + TitleBarHeight + Margin + RowHeight * 0 + Margin * 0,
                 100,
                 RowHeight
                 );

@@ -5,17 +5,17 @@ namespace SaveEditor.Menu.Contents.SetLevel
 {
     internal static class Button
     {
-        internal static readonly Rect Rectangle = new Rect
+        internal static readonly Rect Dimensions = new Rect
                 (
-                BaseMenu.x + Margin,
-                BaseMenu.y + TitleBarHeight + Margin + RowHeight * 1 + Margin * 1,
+                Menu.Dimensions.x + Margin,
+                Menu.Dimensions.y + TitleBarHeight + Margin + RowHeight * 1 + Margin * 1,
                 100,
                 RowHeight
                 );
 
         internal static void Draw()
         {
-            if (GUI.Button(Rectangle, "Set Level"))
+            if (GUI.Button(Dimensions, "Set Level"))
             {
                 Save.MyLvl = int.Parse(TextField.Text);
             }
