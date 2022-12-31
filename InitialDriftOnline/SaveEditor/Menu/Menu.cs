@@ -13,24 +13,16 @@ namespace SaveEditor.Menu
 
         internal static bool IsOpen { get; private set; } = false;
 
-        internal static void Enable()
+        internal static void Open()
         {
-            if (!IsOpen)
-            {
-                MelonEvents.OnGUI.Subscribe(Draw);
-                IsOpen = true;
-            }
-            else throw new System.Exception("Menu Already Enabled");
+            MelonEvents.OnGUI.Subscribe(Draw);
+            IsOpen = true;
         }
 
-        internal static void Disable()
+        internal static void Close()
         {
-            if (IsOpen)
-            {
-                MelonEvents.OnGUI.Unsubscribe(Draw);
-                IsOpen = false;
-            }
-            else throw new System.Exception("Menu Already Disabled");
+            MelonEvents.OnGUI.Unsubscribe(Draw);
+            IsOpen = false;
         }
 
         private static void Draw()

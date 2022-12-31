@@ -11,11 +11,11 @@ namespace SaveEditor
             {
                 if (!Menu.Menu.IsOpen)
                 {
-                    Menu.Menu.Enable();
+                    Menu.Menu.Open();
                 }
                 else
                 {
-                    Menu.Menu.Disable();
+                    Menu.Menu.Close();
                 }
             }
         }
