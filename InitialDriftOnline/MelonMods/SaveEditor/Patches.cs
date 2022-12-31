@@ -1,32 +1,11 @@
 ﻿using CodeStage.AntiCheat.Storage;
 using HarmonyLib;
-using MelonLoader;
 using Steamworks;
-using UnityEngine;
 
 namespace SaveEditor
 {
-    public class Main : MelonMod
+    internal class Patches
     {
-        private bool IsMenuOpen = false;
-        public override void OnLateUpdate()
-        {
-            if (Input.GetKeyDown(KeyCode.BackQuote))
-            {
-                if (!IsMenuOpen)
-                {
-                    MelonEvents.OnGUI.Subscribe(Menu.Menu.Draw);
-                    IsMenuOpen = true;
-                }
-                else
-                {
-                    MelonEvents.OnGUI.Unsubscribe(Menu.Menu.Draw);
-                    IsMenuOpen = false;
-                }
-            }
-        }
-
-
         [HarmonyPatch(typeof(SteamUserStats), "UploadLeaderboardScore")]
         private static class UploadLeaderboardScorePatch
         {
