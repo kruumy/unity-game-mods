@@ -1,5 +1,6 @@
 ﻿using CodeStage.AntiCheat.Storage;
 using HarmonyLib;
+using MelonLoader;
 using Steamworks;
 
 namespace SaveEditor
@@ -29,11 +30,13 @@ namespace SaveEditor
                     {
                         case "MyLvl":
                             {
+                                MelonLogger.Msg($"Patched Invalid Level {value}");
                                 value = Save.MyLvl;
                                 break;
                             }
                         case "XP":
                             {
+                                MelonLogger.Msg($"Patched Invalid XP {value}");
                                 value = Save.XP;
                                 break;
                             }

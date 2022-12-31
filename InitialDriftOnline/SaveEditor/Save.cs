@@ -1,4 +1,5 @@
 ﻿using CodeStage.AntiCheat.Storage;
+using MelonLoader;
 
 namespace SaveEditor
 {
@@ -10,7 +11,9 @@ namespace SaveEditor
             set
             {
                 ObscuredPrefs.SetInt("MyLvl", value);
+                MelonLogger.Msg($"MyLvl = {value}");
                 ObscuredPrefs.SetInt("XP", value * 100);
+                MelonLogger.Msg($"XP = {value * 100}");
             }
         }
 
@@ -20,20 +23,30 @@ namespace SaveEditor
             set
             {
                 ObscuredPrefs.SetInt("MyLvl", value / 100);
+                MelonLogger.Msg($"MyLvl = {value / 100}");
                 ObscuredPrefs.SetInt("XP", value);
+                MelonLogger.Msg($"XP = {value}");
             }
         }
 
         public static int MyBalance
         {
             get => ObscuredPrefs.GetInt("MyBalance");
-            set => ObscuredPrefs.SetInt("MyBalance", value);
+            set
+            {
+                ObscuredPrefs.SetInt("MyBalance", value);
+                MelonLogger.Msg($"MyBalance = {value}");
+            }
         }
 
         public static int BoostQuantity
         {
             get => ObscuredPrefs.GetInt("BoostQuantity");
-            set => ObscuredPrefs.SetInt("BoostQuantity", value);
+            set
+            {
+                ObscuredPrefs.SetInt("BoostQuantity", value);
+                MelonLogger.Msg($"BoostQuantity = {value}");
+            }
         }
     }
 }

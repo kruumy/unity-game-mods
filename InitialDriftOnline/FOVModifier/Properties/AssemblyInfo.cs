@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(FOVModifier.Main), "FOV Modifier", "1.0.0", "kruumy")]
+[assembly: MelonInfo(typeof(FOVModifier.Main), "FOVModifier", "1.0.0", "kruumy")]
 [assembly: MelonGame("Rewindapp", "Initial Drift")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

@@ -5,9 +5,9 @@ namespace SaveEditor.Menu
 {
     internal static class Menu
     {
-        internal static Rect Dimensions = new Rect(10, 10, 300, 500);
+        internal static Rect Dimensions = new Rect(10, 10, 300, 115);
         internal static readonly int Margin = 5;
-        internal static readonly int TitleBarHeight = 10;
+        internal static readonly int TitleBarHeight = 15;
         internal static readonly int RowHeight = 25;
         private static readonly int WindowID = new System.Random().Next();
 
@@ -17,12 +17,14 @@ namespace SaveEditor.Menu
         {
             MelonEvents.OnGUI.Subscribe(Draw);
             IsOpen = true;
+            Cursor.visible = true;
         }
 
         internal static void Close()
         {
             MelonEvents.OnGUI.Unsubscribe(Draw);
             IsOpen = false;
+            Cursor.visible = false;
         }
 
         private static void Draw()
@@ -37,6 +39,8 @@ namespace SaveEditor.Menu
 
                 Contents.SetBoost.Button.Draw();
                 Contents.SetBoost.TextField.Draw();
+
+                GUI.DragWindow(new Rect(0, 0, 10000, 20));
             }, "Save Editor");
         }
     }

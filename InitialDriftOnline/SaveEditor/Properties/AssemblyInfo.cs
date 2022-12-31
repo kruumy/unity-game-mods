@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: MelonInfo(typeof(SaveEditor.Main), "Save Editor", "1.0.0", "kruumy")]
+[assembly: MelonInfo(typeof(SaveEditor.Main), "SaveEditor", "1.0.0", "kruumy")]
 [assembly: MelonGame("Rewindapp", "Initial Drift")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

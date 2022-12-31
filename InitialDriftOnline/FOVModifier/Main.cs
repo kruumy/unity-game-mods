@@ -5,6 +5,12 @@ namespace FOVModifier
 {
     public class Main : MelonMod
     {
+        public override void OnInitializeMelon()
+        {
+            MelonLogger.Msg("FOVModifier Loaded!");
+            MelonLogger.Msg("Press - to lower FOV.");
+            MelonLogger.Msg("Press + to raise FOV.");
+        }
         private float? oldFOV = null;
         public override void OnLateUpdate()
         {

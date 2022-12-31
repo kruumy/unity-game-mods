@@ -7,8 +7,8 @@ namespace SaveEditor.Menu.Contents.SetBoost
     {
         internal static readonly Rect Dimensions = new Rect
                 (
-                Menu.Dimensions.x + Margin,
-                Menu.Dimensions.y + TitleBarHeight + Margin + RowHeight * 2 + Margin * 2,
+                Margin,
+                TitleBarHeight + Margin + RowHeight * 2 + Margin * 2,
                 100,
                 RowHeight
                 );
