@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Linq;
-using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace GraphicsEditor
 {
     public static class CameraExtensions
     {
-        private static PostProcessVolume lastppv;
         public static PostProcessVolume get_PostProcessVolume(this UnityEngine.Camera camera)
         {
             if (camera.GetComponent<PostProcessVolume>() == null)
             {
-                // Not working
+                // TODO: Handle for scenes without ppv object
                 PostProcessVolume res = camera.gameObject.AddComponent<PostProcessVolume>();
-                res.isGlobal = true;
-                res.profile = lastppv.profile;
-                res.sharedProfile = lastppv.sharedProfile;
-                res.gameObject.layer = LayerMask.NameToLayer("Post Processing");
                 return res;
             }
             else
@@ -26,16 +20,12 @@ namespace GraphicsEditor
                 return camera.GetComponent<PostProcessVolume>();
             }
         }
-        private static PostProcessLayer lastppl;
         public static PostProcessLayer get_PostProcessLayer(this UnityEngine.Camera camera)
         {
             if (camera.GetComponent<PostProcessLayer>() == null)
             {
-                // Not working
+                // TODO: Handle for scenes without ppl object
                 PostProcessLayer res = camera.gameObject.AddComponent<PostProcessLayer>();
-                camera.tag = "MainCamera";
-                res.volumeTrigger = camera.transform;
-                res.volumeLayer = LayerMask.GetMask("Post Processing");
                 return res;
             }
             else
