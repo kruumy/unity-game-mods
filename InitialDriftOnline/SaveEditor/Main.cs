@@ -8,11 +8,11 @@ namespace SaveEditor
         public override void OnInitializeMelon()
         {
             MelonLogger.Msg("SaveEditor Loaded!");
-            MelonLogger.Msg("Press ` to open the menu.");
+            MelonLogger.Msg("Press F2 to open the menu.");
         }
         public override void OnLateUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.BackQuote))
+            if (Input.GetKeyDown(KeyCode.F2))
             {
                 if (!Menu.Menu.IsOpen)
                 {

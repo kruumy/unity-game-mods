@@ -15,5 +15,12 @@ namespace StatEditor.Menu.Contents
             GUILayout.Label($"{label} = {(int)sliderValue}");
             sliderValueSetter.Invoke(GUILayout.HorizontalSlider(sliderValue, sliderMin, sliderMax));
         }
+        public static void Button(Action work, string label)
+        {
+            if (GUILayout.Button(label))
+            {
+                work.Invoke();
+            }
+        }
     }
 }
