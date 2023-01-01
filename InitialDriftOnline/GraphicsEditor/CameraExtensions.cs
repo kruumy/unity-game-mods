@@ -16,7 +16,6 @@ namespace GraphicsEditor
             }
             else
             {
-                lastppv = camera.GetComponent<PostProcessVolume>();
                 return camera.GetComponent<PostProcessVolume>();
             }
         }
@@ -30,7 +29,6 @@ namespace GraphicsEditor
             }
             else
             {
-                lastppl = camera.GetComponent<PostProcessLayer>();
                 return camera.GetComponent<PostProcessLayer>();
             }
         }
