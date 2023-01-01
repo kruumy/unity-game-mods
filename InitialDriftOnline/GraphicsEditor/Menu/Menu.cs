@@ -5,7 +5,7 @@ namespace GraphicsEditor.Menu
 {
     public static class Menu
     {
-        internal static Rect Dimensions = new Rect(10, 10, 240, 150);
+        internal static Rect Dimensions = new Rect(10, 10, 240, 155);
         private static readonly int WindowID = new System.Random().Next();
         internal static bool IsOpen { get; private set; } = false;
         internal static void Open()
