@@ -5,13 +5,11 @@ VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOVModifier", "FOVModifier\FOVModifier.csproj", "{80426378-8AAE-4471-AA2A-BB2E4A667FBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveInvisibleWalls", "RemoveInvisibleWalls\RemoveInvisibleWalls.csproj", "{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\SaveEditor.csproj", "{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unstucker", "Unstucker\Unstucker.csproj", "{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatEditor", "StatEditor\StatEditor.csproj", "{3EA8FFA6-B068-4315-A038-431221DFE41D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsEditor", "GraphicsEditor\GraphicsEditor.csproj", "{79752249-881D-4C7A-98A6-22F2FC6F4E8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +21,18 @@ Global
 		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4CD82EF-E571-4D9C-AEAF-2ADC1E7CC9C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DCFE015-EF07-49BD-9EE8-5159CC3C279A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EA8FFA6-B068-4315-A038-431221DFE41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
