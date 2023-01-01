@@ -1,4 +1,6 @@
-﻿using UnityEngine.Rendering.PostProcessing;
+﻿using System;
+using System.Linq;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace GraphicsEditor
 {
@@ -25,7 +27,7 @@ namespace GraphicsEditor
         {
             camera.get_PostProcessVolume().profile.settings.ForEach(p => p.active = false);
         }
-        public static T get_PostProcessSettings<T>(this UnityEngine.Camera camera)
+        public static T get_PostProcessSettings<T>(this UnityEngine.Camera camera) where T : PostProcessEffectSettings
         {
             foreach (PostProcessEffectSettings item in camera.get_PostProcessVolume().profile.settings)
             {
@@ -34,7 +36,8 @@ namespace GraphicsEditor
                     return t;
                 }
             }
-            return default;
+            camera.get_PostProcessVolume().profile.settings.Add((T)Activator.CreateInstance(typeof(T)));
+            return (T)camera.get_PostProcessVolume().profile.settings.Last();
         }
     }
 }
