@@ -9,14 +9,14 @@ namespace SaveEditor
     public class ButtonAndTextField : ValueControl<string>, IContent
     {
         public GUIContent Content { get; set; } = new GUIContent("");
-        public Action<int> ValueSetter { get; set; }
+        public Action<int> OnButtonClick { get; set; }
         public override void Draw()
         {
             if (GUILayout.Button(Content))
             {
                 try
                 {
-                    ValueSetter.Invoke(int.Parse(Value));
+                    OnButtonClick.Invoke(int.Parse(Value));
                 }
                 catch (FormatException)
                 {

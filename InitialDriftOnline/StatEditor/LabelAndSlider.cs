@@ -1,13 +1,17 @@
-﻿using EasyIMGUI.Controls.Base;
+﻿using EasyIMGUI.Controls;
+using System;
 using UnityEngine;
 
 namespace StatEditor
 {
-    public class LabelAndSlider : BindedValueControl<float>
+    public class LabelAndSlider : HorizontalSlider
     {
+        public LabelAndSlider(Func<float> getter, Action<float> setter)
+        {
+            Bind(getter, setter);
+        }
+
         public string Label { get; set; } = "";
-        public float Minimum { get; set; } = 0;
-        public float Maximum { get; set; } = 10;
         public override void Draw()
         {
             GUILayout.Label($"{Label} = {(int)Value}");

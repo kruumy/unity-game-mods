@@ -21,45 +21,45 @@ namespace StatEditor
                 Dimensions = new Rect(10, 10, 300, 255),
                 Controls =
                 {
-                    new LabelAndSlider()
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.downForce,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.downForce = v)
                     {
                         Label = "downForce",
                         Minimum = -500,
                         Maximum = 500,
-                        ValueGetter = () => RCC_SceneManager.Instance.activePlayerVehicle.downForce,
-                        ValueSetter = v => RCC_SceneManager.Instance.activePlayerVehicle.downForce = v,
                     },
-                    new LabelAndSlider()
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.engineTorque,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.engineTorque = v)
                     {
                         Label = "engineTorque",
                         Minimum = 0,
                         Maximum = 10000,
-                        ValueGetter = () => RCC_SceneManager.Instance.activePlayerVehicle.engineTorque,
-                        ValueSetter = v => RCC_SceneManager.Instance.activePlayerVehicle.engineTorque = v,
                     },
-                    new LabelAndSlider()
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.brakeTorque,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.brakeTorque = v)
                     {
                         Label = "brakeTorque",
                         Minimum = 0,
                         Maximum = 1000000,
-                        ValueGetter = () => RCC_SceneManager.Instance.activePlayerVehicle.brakeTorque,
-                        ValueSetter = v => RCC_SceneManager.Instance.activePlayerVehicle.brakeTorque = v,
                     },
-                    new LabelAndSlider()
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.maxspeed,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.maxspeed = v)
                     {
                         Label = "maxspeed",
                         Minimum = 0,
                         Maximum = 1000,
-                        ValueGetter = () => RCC_SceneManager.Instance.activePlayerVehicle.maxspeed,
-                        ValueSetter = v => RCC_SceneManager.Instance.activePlayerVehicle.maxspeed = v,
                     },
-                    new LabelAndSlider()
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.get_orgSteerAngle(),
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.set_orgSteerAngle(v))
                     {
                         Label = "orgSteerAngle",
                         Minimum = 0,
                         Maximum = 180,
-                        ValueGetter = () => RCC_SceneManager.Instance.activePlayerVehicle.get_orgSteerAngle(),
-                        ValueSetter = v => RCC_SceneManager.Instance.activePlayerVehicle.set_orgSteerAngle(v),
                     },
                     SaveToPreferencesBtn
                 }

@@ -25,7 +25,7 @@ namespace SaveEditor
                             new ButtonAndTextField
                             {
                                 Value = PlayerSaveWrapper.MyBalance.ToString(),
-                                ValueSetter = x => PlayerSaveWrapper.MyBalance = x,
+                                OnButtonClick = x => PlayerSaveWrapper.MyBalance = x,
                                 Content = { text = "Set MyBalance" }
                             }
                         }
@@ -37,7 +37,7 @@ namespace SaveEditor
                             new ButtonAndTextField
                             {
                                 Value = PlayerSaveWrapper.MyLvl.ToString(),
-                                ValueSetter = x => PlayerSaveWrapper.MyLvl = x,
+                                OnButtonClick = x => PlayerSaveWrapper.MyLvl = x,
                                 Content = { text = "Set MyLvl" }
                             }
                         }
@@ -49,7 +49,7 @@ namespace SaveEditor
                             new ButtonAndTextField
                             {
                                 Value = PlayerSaveWrapper.BoostQuantity.ToString(),
-                                ValueSetter = x => PlayerSaveWrapper.BoostQuantity = x,
+                                OnButtonClick = x => PlayerSaveWrapper.BoostQuantity = x,
                                 Content = { text = "Set BoostQuantity" }
                             }
                         }
