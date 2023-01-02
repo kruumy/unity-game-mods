@@ -9,7 +9,7 @@ namespace StatEditor
         public static readonly EasyIMGUI.MelonLoader.Interface.Menu Root = new EasyIMGUI.MelonLoader.Interface.Menu();
         public static void Initialize()
         {
-            Button SaveToPreferencesBtn = new Button();
+            SingleButton SaveToPreferencesBtn = new SingleButton();
             SaveToPreferencesBtn.Content.text = "Save Values To File";
             SaveToPreferencesBtn.OnButtonPressed += (object sender, EventArgs e) => Preferences.Save();
             Root.Controls.Add(new Window()

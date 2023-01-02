@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace StatEditor
 {
-    public class LabelAndSlider : BindedValueControl<float>, ISlider
+    public class LabelAndSlider : BindedValueControl<float>
     {
         public string Label { get; set; } = "";
         public float Minimum { get; set; } = 0;
