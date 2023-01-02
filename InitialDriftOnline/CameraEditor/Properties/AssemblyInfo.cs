@@ -5,16 +5,16 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FOVModifier")]
+[assembly: AssemblyTitle("CameraEditor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FOVModifier")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyProduct("CameraEditor")]
+[assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(FOVModifier.Main), "FOVModifier", "1.0.0", "kruumy")]
+[assembly: MelonInfo(typeof(CameraEditor.Main), "CameraEditor", "1.0.0", "kruumy")]
 [assembly: MelonGame("Rewindapp", "Initial Drift")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("80426378-8aae-4471-aa2a-bb2e4a667fbc")]
+[assembly: Guid("f5fb9783-b5fc-4672-831a-cc89ba0253e9")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOVModifier", "FOVModifier\FOVModifier.csproj", "{80426378-8AAE-4471-AA2A-BB2E4A667FBC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveEditor", "SaveEditor\SaveEditor.csproj", "{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatEditor", "StatEditor\StatEditor.csproj", "{3EA8FFA6-B068-4315-A038-431221DFE41D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsEditor", "GraphicsEditor\GraphicsEditor.csproj", "{79752249-881D-4C7A-98A6-22F2FC6F4E8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraEditor", "CameraEditor\CameraEditor.csproj", "{F5FB9783-B5FC-4672-831A-CC89BA0253E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80426378-8AAE-4471-AA2A-BB2E4A667FBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B2FF1D8-9BA1-4DAE-B7CD-87C63D4185C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79752249-881D-4C7A-98A6-22F2FC6F4E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5FB9783-B5FC-4672-831A-CC89BA0253E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FB9783-B5FC-4672-831A-CC89BA0253E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FB9783-B5FC-4672-831A-CC89BA0253E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FB9783-B5FC-4672-831A-CC89BA0253E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
