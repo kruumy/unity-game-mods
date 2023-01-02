@@ -8,6 +8,7 @@ namespace StatEditor
     {
         public override void OnInitializeMelon()
         {
+            GUI.Initialize();
             RCC_CarControllerV3.OnRCCPlayerSpawned += OnRCCPlayerSpawned;
             MelonLogger.Msg("StatEditor Loaded!");
             MelonLogger.Msg("Press F3 to open the menu.");
@@ -26,14 +27,14 @@ namespace StatEditor
         {
             if (Input.GetKeyDown(KeyCode.F3))
             {
-                if (!Menu.Menu.IsOpen)
+                if (!GUI.Root.IsOpen)
                 {
-                    Menu.Menu.Open();
+                    GUI.Root.Open();
                     MelonLogger.Msg("Menu Opened");
                 }
                 else
                 {
-                    Menu.Menu.Close();
+                    GUI.Root.Close();
                     MelonLogger.Msg("Menu Closed");
                 }
             }
