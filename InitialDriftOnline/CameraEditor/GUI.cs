@@ -12,14 +12,17 @@ namespace CameraEditor
         {
             SingleButton SaveToPreferencesBtn = new SingleButton();
             SaveToPreferencesBtn.Content.text = "Save Values To File";
-            //SaveToPreferencesBtn.OnButtonPressed += (object sender, EventArgs e) => Preferences.Save();
+            SaveToPreferencesBtn.OnButtonPressed += (object sender, EventArgs e) => Preferences.Save();
+            SingleButton ResetPreferencesBtn = new SingleButton();
+            ResetPreferencesBtn.Content.text = "Reset To Default";
+            ResetPreferencesBtn.OnButtonPressed += (object sender, EventArgs e) => Preferences.ResetAllToDefault();
             Root.Controls.Add(new Window()
             {
                 Content =
                 {
                     text = "CameraEditor"
                 },
-                Dimensions = new UnityEngine.Rect(10, 10, 300, 0),
+                Dimensions = new UnityEngine.Rect(10, 10, 500, 0),
                 Controls =
                 {
                     new LabelAndSlider(() => FieldOfView, v => FieldOfView = v)
@@ -64,7 +67,15 @@ namespace CameraEditor
                         Minimum = -50,
                         Maximum = 50
                     },
-                    SaveToPreferencesBtn
+                    new Horizontal()
+                    {
+                        Controls =
+                        {
+                            SaveToPreferencesBtn,
+                            ResetPreferencesBtn
+                        }
+                    }
+                    
                 }
             });
         }

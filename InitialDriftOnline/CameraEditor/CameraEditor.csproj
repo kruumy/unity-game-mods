@@ -66,6 +66,7 @@
     <Compile Include="GUI.cs" />
     <Compile Include="LabelAndSlider.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Preferences.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
