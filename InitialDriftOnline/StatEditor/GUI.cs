@@ -18,7 +18,7 @@ namespace StatEditor
                 {
                     text = "Stat Editor"
                 },
-                Dimensions = new Rect(10, 10, 300, 255),
+                Dimensions = new Rect(10, 10, 300, 10),
                 Controls =
                 {
                     new LabelAndSlider(
@@ -60,6 +60,22 @@ namespace StatEditor
                         Label = "orgSteerAngle",
                         Minimum = 0,
                         Maximum = 180,
+                    },
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngle,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngle = v)
+                    {
+                        Label = "highspeedsteerAngle",
+                        Minimum = 0,
+                        Maximum = 180,
+                    },
+                    new LabelAndSlider(
+                        () => RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngleAtspeed,
+                        v => RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngleAtspeed = v)
+                    {
+                        Label = "highspeedsteerAngleAtspeed",
+                        Minimum = 0,
+                        Maximum = 1000,
                     },
                     SaveToPreferencesBtn
                 }

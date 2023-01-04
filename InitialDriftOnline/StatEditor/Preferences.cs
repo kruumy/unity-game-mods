@@ -10,6 +10,8 @@ namespace StatEditor
         public static MelonPreferences_Entry<float> brakeTorque { get; } = MainCatagory.CreateEntry(nameof(brakeTorque), -1f);
         public static MelonPreferences_Entry<float> maxspeed { get; } = MainCatagory.CreateEntry(nameof(maxspeed), -1f);
         public static MelonPreferences_Entry<float> orgSteerAngle { get; } = MainCatagory.CreateEntry(nameof(orgSteerAngle), -1f);
+        public static MelonPreferences_Entry<float> highspeedsteerAngle { get; } = MainCatagory.CreateEntry(nameof(highspeedsteerAngle), -1f);
+        public static MelonPreferences_Entry<float> highspeedsteerAngleAtspeed { get; } = MainCatagory.CreateEntry(nameof(highspeedsteerAngleAtspeed), -1f);
 
         public static void Save()
         {
@@ -18,6 +20,8 @@ namespace StatEditor
             brakeTorque.Value = RCC_SceneManager.Instance.activePlayerVehicle.brakeTorque;
             maxspeed.Value = RCC_SceneManager.Instance.activePlayerVehicle.maxspeed;
             orgSteerAngle.Value = RCC_SceneManager.Instance.activePlayerVehicle.get_orgSteerAngle();
+            highspeedsteerAngle.Value = RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngle;
+            highspeedsteerAngleAtspeed.Value = RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngleAtspeed;
             MelonPreferences.Save();
         }
         public static void Load()
@@ -33,6 +37,10 @@ namespace StatEditor
                 RCC_SceneManager.Instance.activePlayerVehicle.maxspeed = maxspeed.Value;
             if (orgSteerAngle.DefaultValue != orgSteerAngle.Value)
                 RCC_SceneManager.Instance.activePlayerVehicle.set_orgSteerAngle(orgSteerAngle.Value);
+            if (highspeedsteerAngle.DefaultValue != highspeedsteerAngle.Value)
+                RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngle = highspeedsteerAngle.Value;
+            if (highspeedsteerAngleAtspeed.DefaultValue != highspeedsteerAngleAtspeed.Value)
+                RCC_SceneManager.Instance.activePlayerVehicle.highspeedsteerAngleAtspeed = highspeedsteerAngleAtspeed.Value;
         }
     }
 }
