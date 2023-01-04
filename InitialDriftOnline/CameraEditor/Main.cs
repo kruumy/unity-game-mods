@@ -1,7 +1,5 @@
 ﻿using MelonLoader;
-using System.Threading.Tasks;
 using UnityEngine;
-using static RCC_CarControllerV3;
 
 namespace CameraEditor
 {

@@ -1,4 +1,4 @@
-﻿using EasyIMGUI.Controls;
+﻿using EasyIMGUI.Controls.Automatic;
 using System;
 using UnityEngine;
 

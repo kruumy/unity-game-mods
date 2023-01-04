@@ -1,4 +1,4 @@
-﻿using EasyIMGUI.Controls;
+﻿using EasyIMGUI.Controls.Automatic;
 using EasyIMGUI.MelonLoader.Interface;
 using System;
 using static CameraEditor.CameraWrapper;
@@ -75,7 +75,7 @@ namespace CameraEditor
                             ResetPreferencesBtn
                         }
                     }
-                    
+
                 }
             });
         }

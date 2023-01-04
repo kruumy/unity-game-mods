@@ -1,5 +1,4 @@
-﻿using EasyIMGUI.Controls;
-using UnityEngine;
+﻿using EasyIMGUI.Controls.Automatic;
 
 namespace SaveEditor
 {
@@ -8,7 +7,6 @@ namespace SaveEditor
         public static readonly EasyIMGUI.MelonLoader.Interface.Menu Root = new EasyIMGUI.MelonLoader.Interface.Menu();
         public static void Initialize()
         {
-
             Root.Controls.Add(new Window()
             {
                 Content =
