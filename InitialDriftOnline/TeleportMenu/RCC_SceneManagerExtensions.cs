@@ -34,7 +34,7 @@ namespace TeleportMenu
         {
             foreach (RCC_CarControllerV3 car in rcc.get_AllPlayerVehicles())
             {
-                if (car.get_PlayerName().Contains(name))
+                if (car.get_PlayerName() == name)
                 {
                     return car;
                 }
