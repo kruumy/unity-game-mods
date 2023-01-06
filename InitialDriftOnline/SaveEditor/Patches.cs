@@ -5,7 +5,7 @@ using Steamworks;
 
 namespace SaveEditor
 {
-    internal class Patches
+    internal static class Patches
     {
         [HarmonyPatch(typeof(SteamUserStats), "UploadLeaderboardScore")]
         private static class UploadLeaderboardScorePatch
