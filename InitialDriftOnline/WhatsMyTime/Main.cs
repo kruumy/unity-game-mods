@@ -20,7 +20,8 @@ namespace WhatsMyTime
         {
             SRToffuManagerWrapper.Initialize();
             SRToffuManagerWrapper.OnTofuRunStart += OnTofuRunStart;
-            SRToffuManagerWrapper.OnTofuRunStopped += OnTofuRunStopped; ;
+            SRToffuManagerWrapper.OnTofuRunCompleted += OnTofuRunCompleted;
+            SRToffuManagerWrapper.OnTofuRunInterupted += OnTofuRunInterupted;
         }
 
         private void GuiWork()
@@ -31,15 +32,22 @@ namespace WhatsMyTime
             GUI.Label(LabelRect, elapsedTime, LabelStyle);
         }
 
+        private async void OnTofuRunCompleted(object sender, System.EventArgs e)
+        {
+            MelonLogger.Msg("Tofu Run Completed :)");
+            MelonLogger.Msg($"Time Elapsed = {SRToffuManagerWrapper.Timer.Elapsed}");
+            await Task.Delay(10000);
+            MelonEvents.OnGUI.Unsubscribe(GuiWork);
+        }
+
+        private void OnTofuRunInterupted(object sender, System.EventArgs e)
+        {
+            MelonEvents.OnGUI.Unsubscribe(GuiWork);
+        }
+
         private void OnTofuRunStart(object sender, System.EventArgs e)
         {
             MelonEvents.OnGUI.Subscribe(GuiWork);
-        }
-
-        private async void OnTofuRunStopped(object sender, System.EventArgs e)
-        {
-            await Task.Delay(10000);
-            MelonEvents.OnGUI.Unsubscribe(GuiWork);
         }
     }
 }
