@@ -18,7 +18,6 @@ namespace WhatsMyTime
 
         public override void OnInitializeMelon()
         {
-            SRToffuManagerWrapper.Initialize();
             SRToffuManagerWrapper.OnTofuRunStart += OnTofuRunStart;
             SRToffuManagerWrapper.OnTofuRunCompleted += OnTofuRunCompleted;
             SRToffuManagerWrapper.OnTofuRunInterupted += OnTofuRunInterupted;
@@ -42,11 +41,13 @@ namespace WhatsMyTime
 
         private void OnTofuRunInterupted(object sender, System.EventArgs e)
         {
+            MelonLogger.Msg("Tofu Run Interupted :(");
             MelonEvents.OnGUI.Unsubscribe(GuiWork);
         }
 
         private void OnTofuRunStart(object sender, System.EventArgs e)
         {
+            MelonLogger.Msg("Tofu Run Started...");
             MelonEvents.OnGUI.Subscribe(GuiWork);
         }
     }

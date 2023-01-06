@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using System;
 using System.Diagnostics;
-using UnityEngine.SceneManagement;
 
 namespace WhatsMyTime
 {
@@ -16,23 +15,13 @@ namespace WhatsMyTime
         public static SRToffuManager SRToffuManager => UnityEngine.Object.FindObjectOfType<SRToffuManager>();
 
         public static Stopwatch Timer { get; } = new Stopwatch();
-        public static void Initialize()
-        {
-            SceneManager.activeSceneChanged += activeSceneChanged;
-            Timer.Stop();
-        }
-
-        private static void activeSceneChanged(Scene arg0, Scene arg1)
-        {
-            OnTofuRunInterupted?.Invoke(arg1, EventArgs.Empty);
-        }
 
         [HarmonyPatch(typeof(SRToffuManager), "FinDeLivraison")]
         private static class FinDeLivraisonPatch
         {
             private static void Postfix(SRToffuManager __instance)
             {
-                if (__instance == SRToffuManager)
+                if (Timer.IsRunning && __instance == SRToffuManager)
                 {
                     OnTofuRunCompleted?.Invoke(__instance, EventArgs.Empty);
                     Timer.Stop();
@@ -58,7 +47,7 @@ namespace WhatsMyTime
         {
             private static void Postfix(SRToffuManager __instance)
             {
-                if (__instance == SRToffuManager)
+                if (Timer.IsRunning && __instance == SRToffuManager)
                 {
                     OnTofuRunInterupted?.Invoke(__instance, EventArgs.Empty);
                     Timer.Stop();
@@ -71,7 +60,7 @@ namespace WhatsMyTime
         {
             private static void Postfix(SRToffuManager __instance)
             {
-                if (__instance == SRToffuManager)
+                if (Timer.IsRunning && __instance == SRToffuManager)
                 {
                     OnTofuRunInterupted?.Invoke(__instance, EventArgs.Empty);
                     Timer.Stop();
