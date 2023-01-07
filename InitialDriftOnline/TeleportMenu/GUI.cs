@@ -11,21 +11,21 @@ namespace TeleportMenu
 
         public static void Initialize()
         {
-            SingleButton btn1 = new SingleButton();
-            btn1.OnButtonPressed += (object ob, EventArgs e) => Teleport.UpTofu();
-            btn1.Content.text = "Up Tofu";
-            SingleButton btn2 = new SingleButton();
-            btn2.Content.text = "Down Tofu";
-            btn2.OnButtonPressed += (object ob, EventArgs e) => Teleport.DownTofu();
+            SingleButton UpTofuBtn = new SingleButton();
+            UpTofuBtn.OnButtonPressed += (object ob, EventArgs e) => Teleport.UpTofu();
+            UpTofuBtn.Content.text = "Up Tofu";
+            SingleButton DownTofuBtn = new SingleButton();
+            DownTofuBtn.Content.text = "Down Tofu";
+            DownTofuBtn.OnButtonPressed += (object ob, EventArgs e) => Teleport.DownTofu();
 
             TextField PlayerNameField = new TextField
             {
                 Value = string.Empty
             };
 
-            SingleButton btn3 = new SingleButton();
-            btn3.Content.text = "To Player";
-            btn3.OnButtonPressed += (object ob, EventArgs e) => Teleport.ToPlayer(PlayerNameField.Value);
+            SingleButton MeToPlayerBtn = new SingleButton();
+            MeToPlayerBtn.Content.text = "Me To Player";
+            MeToPlayerBtn.OnButtonPressed += (object ob, EventArgs e) => Teleport.MeToPlayer(PlayerNameField.Value);
 
             Root.Controls.Add(new Window()
             {
@@ -36,13 +36,13 @@ namespace TeleportMenu
                 Dimensions = new Rect(10, 10, 300, 10),
                 Controls =
                 {
-                    btn1,
-                    btn2,
+                    UpTofuBtn,
+                    DownTofuBtn,
                     new Horizontal()
                     {
                         Controls =
                         {
-                            btn3,
+                            MeToPlayerBtn,
                             PlayerNameField
                         }
                     }

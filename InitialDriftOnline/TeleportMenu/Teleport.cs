@@ -10,32 +10,58 @@ namespace TeleportMenu
 
         public static void DownTofu()
         {
-            GoTo(SRAdminTools.AkagiUp);
+            GoTo(RCC_SceneManager.Instance.activePlayerVehicle.gameObject, SRAdminTools.AkagiUp);
         }
-
-        public static void GoTo(Transform Target)
+        public static void GoTo(GameObject obj, GameObject target)
         {
-            System.Reflection.MethodInfo method = typeof(SRAdminTools).GetMethod("LobbySpawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            RCC_SceneManager.Instance.activePlayerVehicle.gameObject.GetComponent<Rigidbody>().drag = 1000f;
-            _ = SRAdminTools.StartCoroutine((IEnumerator)method.Invoke(SRAdminTools, new object[] { Target }));
-            MelonLogger.Msg($"Teleported -> {Target.position}");
+            GoTo(obj, target.gameObject.transform);
         }
-
-        public static void ToPlayer(string PlayerName)
+        public static void GoTo(GameObject obj, Transform target)
+        {
+            SRAdminTools.StartCoroutine(subWork());
+            IEnumerator subWork()
+            {
+                _ = Vector3.zero;
+                _ = Quaternion.identity;
+                yield return new WaitForSeconds(0.2f);
+                Vector3 position = target.position;
+                Quaternion rotation = target.rotation;
+                obj.transform.position = position;
+                obj.transform.rotation = rotation;
+                yield return new WaitForSeconds(0.2f);
+                obj.gameObject.GetComponent<Rigidbody>().drag = 0.01f;
+            }
+            MelonLogger.Msg($"Teleported {obj.name} -> {target.transform.position}");
+        }
+        public static void MeToPlayer(string PlayerName)
         {
             MelonLogger.Msg($"Trying {PlayerName}...");
             RCC_CarControllerV3 vehicle = RCC_SceneManager.Instance.get_PlayerVehicleByPlayerName(PlayerName);
             if (vehicle == null)
             {
-                MelonLogger.Error($"Could not get car from player name. '{PlayerName}'");
+                MelonLogger.Error($"Could not get obj from player name. '{PlayerName}'");
                 return;
             }
-            GoTo(vehicle.gameObject.transform);
+            GoTo(RCC_SceneManager.Instance.activePlayerVehicle.gameObject, vehicle.gameObject.transform);
+        }
+
+        public static void PlayerToMe(string PlayerName)
+        {
+            MelonLogger.Msg($"Trying {PlayerName}...");
+            RCC_CarControllerV3 vehicle = RCC_SceneManager.Instance.get_PlayerVehicleByPlayerName(PlayerName);
+            if (vehicle == null)
+            {
+                MelonLogger.Error($"Could not get obj from player name. '{PlayerName}'");
+                return;
+            }
+            GoTo(vehicle.gameObject, RCC_SceneManager.Instance.activePlayerVehicle.gameObject.transform);
+            // not working, need to get player client to tp aswell.
+            throw new System.NotImplementedException();
         }
 
         public static void UpTofu()
         {
-            GoTo(SRAdminTools.AkinaDown);
+            GoTo(RCC_SceneManager.Instance.activePlayerVehicle.gameObject, SRAdminTools.AkinaDown);
         }
     }
 }
