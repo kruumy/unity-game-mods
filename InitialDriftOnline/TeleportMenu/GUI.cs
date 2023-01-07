@@ -35,6 +35,7 @@ namespace TeleportMenu
                     text = "Teleport Menu"
                 },
                 Dimensions = new Rect(10, 10, 300, 10),
+                AutoResizeHeight = true,
                 Controls =
                 {
                     UpTofuBtn,
@@ -77,7 +78,6 @@ namespace TeleportMenu
                     btn.OnButtonPressed += (object ob2, EventArgs e2) => PlayerNameField.Value = name;
                     area.Controls.Add(btn);
                 }
-                win.Dimensions = new Rect(win.Dimensions.x, win.Dimensions.y, win.Dimensions.width, 0);
                 win.Controls.Add(area);
             };
         }
