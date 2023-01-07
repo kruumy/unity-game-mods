@@ -12,14 +12,7 @@ namespace CameraEditor
             MelonLogger.Msg("CameraEditor Loaded!");
             MelonLogger.Msg("Press F5 to open the menu.");
         }
-        private void OnRCCPlayerSpawned(RCC_CarControllerV3 Car)
-        {
-            if (Car == RCC_SceneManager.Instance.activePlayerVehicle)
-            {
-                //await Task.Delay(1000);
-                Preferences.Load();
-            }
-        }
+
         public override void OnLateUpdate()
         {
             if (Input.GetKeyDown(KeyCode.F5))
@@ -34,6 +27,15 @@ namespace CameraEditor
                     GUI.Root.Close();
                     MelonLogger.Msg("Menu Closed");
                 }
+            }
+        }
+
+        private void OnRCCPlayerSpawned(RCC_CarControllerV3 Car)
+        {
+            if (Car == RCC_SceneManager.Instance.activePlayerVehicle)
+            {
+                //await Task.Delay(1000);
+                Preferences.Load();
             }
         }
     }

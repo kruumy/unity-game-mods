@@ -7,18 +7,6 @@ namespace SaveEditor
 {
     internal static class Patches
     {
-        [HarmonyPatch(typeof(SteamUserStats), "UploadLeaderboardScore")]
-        private static class UploadLeaderboardScorePatch
-        {
-            private static void Prefix(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, ref int nScore, int[] pScoreDetails, int cScoreDetailsCount)
-            {
-                if (UnityEngine.Object.FindObjectOfType<LeaderboardUsersManager>().BESTLVL.LeaderboardId.Value == hSteamLeaderboard)
-                {
-                    nScore = PlayerSaveWrapper.MyLvl;
-                }
-            }
-        }
-
         [HarmonyPatch(typeof(ObscuredPrefs), "SetInt")]
         private static class SetIntPatch
         {
@@ -41,6 +29,18 @@ namespace SaveEditor
                                 break;
                             }
                     }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(SteamUserStats), "UploadLeaderboardScore")]
+        private static class UploadLeaderboardScorePatch
+        {
+            private static void Prefix(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, ref int nScore, int[] pScoreDetails, int cScoreDetailsCount)
+            {
+                if (UnityEngine.Object.FindObjectOfType<LeaderboardUsersManager>().BESTLVL.LeaderboardId.Value == hSteamLeaderboard)
+                {
+                    nScore = PlayerSaveWrapper.MyLvl;
                 }
             }
         }

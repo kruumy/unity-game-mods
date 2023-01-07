@@ -8,17 +8,19 @@ namespace GraphicsEditor.Menu
         internal static Rect Dimensions = new Rect(10, 10, 240, 155);
         private static readonly int WindowID = new System.Random().Next();
         internal static bool IsOpen { get; private set; } = false;
-        internal static void Open()
-        {
-            MelonEvents.OnGUI.Subscribe(Draw);
-            IsOpen = true;
-        }
 
         internal static void Close()
         {
             MelonEvents.OnGUI.Unsubscribe(Draw);
             IsOpen = false;
         }
+
+        internal static void Open()
+        {
+            MelonEvents.OnGUI.Subscribe(Draw);
+            IsOpen = true;
+        }
+
         private static void Draw()
         {
             Dimensions = GUI.Window(WindowID, Dimensions, (int windowId) =>

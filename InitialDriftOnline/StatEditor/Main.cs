@@ -14,15 +14,6 @@ namespace StatEditor
             MelonLogger.Msg("Press F3 to open the menu.");
         }
 
-        private async void OnRCCPlayerSpawned(RCC_CarControllerV3 Car)
-        {
-            if (Car == RCC_SceneManager.Instance.activePlayerVehicle)
-            {
-                await Task.Delay(5000); // this is here to prevent the game from writing to the vehicles values after ours
-                Preferences.Load();
-            }
-        }
-
         public override void OnLateUpdate()
         {
             if (Input.GetKeyDown(KeyCode.F3))
@@ -37,6 +28,15 @@ namespace StatEditor
                     GUI.Root.Close();
                     MelonLogger.Msg("Menu Closed");
                 }
+            }
+        }
+
+        private async void OnRCCPlayerSpawned(RCC_CarControllerV3 Car)
+        {
+            if (Car == RCC_SceneManager.Instance.activePlayerVehicle)
+            {
+                await Task.Delay(5000); // this is here to prevent the game from writing to the vehicles values after ours
+                Preferences.Load();
             }
         }
     }

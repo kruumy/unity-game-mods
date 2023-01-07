@@ -24,7 +24,7 @@ namespace TeleportMenu
             RCC_CarControllerV3[] allcars = UnityEngine.Object.FindObjectsOfType<RCC_CarControllerV3>();
             foreach (RCC_CarControllerV3 car in allcars)
             {
-                if (car.name.Contains("(Clone)"))
+                if (car.IsPlayerCar())
                 {
                     result.Add(car);
                 }

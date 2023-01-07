@@ -9,6 +9,7 @@ namespace SaveEditor
     {
         public GUIContent Content { get; set; } = new GUIContent("");
         public Action<int> OnButtonClick { get; set; }
+
         public override void Draw()
         {
             if (GUILayout.Button(Content))

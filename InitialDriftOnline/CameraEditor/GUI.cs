@@ -8,6 +8,7 @@ namespace CameraEditor
     public static class GUI
     {
         public static Menu Root { get; } = new Menu();
+
         public static void Initialize()
         {
             SingleButton SaveToPreferencesBtn = new SingleButton();
@@ -75,7 +76,6 @@ namespace CameraEditor
                             ResetPreferencesBtn
                         }
                     }
-
                 }
             });
         }

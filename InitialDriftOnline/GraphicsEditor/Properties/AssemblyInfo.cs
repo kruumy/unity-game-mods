@@ -13,7 +13,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 [assembly: MelonInfo(typeof(GraphicsEditor.Main), "GraphicsEditor", "1.0.0", "kruumy")]
 [assembly: MelonGame("Rewindapp", "Initial Drift")]
 

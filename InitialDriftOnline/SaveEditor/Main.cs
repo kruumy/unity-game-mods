@@ -1,11 +1,10 @@
 ﻿using MelonLoader;
 using UnityEngine;
+
 namespace SaveEditor
 {
-
     public class Main : MelonMod
     {
-
         public override void OnInitializeMelon()
         {
             GUI.Initialize();

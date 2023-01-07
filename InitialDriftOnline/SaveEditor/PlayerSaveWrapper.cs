@@ -5,6 +5,26 @@ namespace SaveEditor
 {
     public static class PlayerSaveWrapper
     {
+        public static int BoostQuantity
+        {
+            get => ObscuredPrefs.GetInt("BoostQuantity");
+            set
+            {
+                ObscuredPrefs.SetInt("BoostQuantity", value);
+                MelonLogger.Msg($"BoostQuantity = {value}");
+            }
+        }
+
+        public static int MyBalance
+        {
+            get => ObscuredPrefs.GetInt("MyBalance");
+            set
+            {
+                ObscuredPrefs.SetInt("MyBalance", value);
+                MelonLogger.Msg($"MyBalance = {value}");
+            }
+        }
+
         public static int MyLvl
         {
             get => ObscuredPrefs.GetInt("MyLvl");
@@ -26,26 +46,6 @@ namespace SaveEditor
                 MelonLogger.Msg($"MyLvl = {value / 100}");
                 ObscuredPrefs.SetInt("XP", value);
                 MelonLogger.Msg($"XP = {value}");
-            }
-        }
-
-        public static int MyBalance
-        {
-            get => ObscuredPrefs.GetInt("MyBalance");
-            set
-            {
-                ObscuredPrefs.SetInt("MyBalance", value);
-                MelonLogger.Msg($"MyBalance = {value}");
-            }
-        }
-
-        public static int BoostQuantity
-        {
-            get => ObscuredPrefs.GetInt("BoostQuantity");
-            set
-            {
-                ObscuredPrefs.SetInt("BoostQuantity", value);
-                MelonLogger.Msg($"BoostQuantity = {value}");
             }
         }
     }
