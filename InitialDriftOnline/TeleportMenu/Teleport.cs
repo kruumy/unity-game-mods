@@ -21,6 +21,7 @@ namespace TeleportMenu
             SRAdminTools.StartCoroutine(subWork());
             IEnumerator subWork()
             {
+                RCC_SceneManager.Instance.activePlayerVehicle.gameObject.GetComponent<Rigidbody>().drag = 1000f;
                 _ = Vector3.zero;
                 _ = Quaternion.identity;
                 yield return new WaitForSeconds(0.2f);
