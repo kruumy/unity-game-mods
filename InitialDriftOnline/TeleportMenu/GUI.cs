@@ -1,4 +1,5 @@
 ﻿using EasyIMGUI.Controls.Automatic;
+using EasyIMGUI.Controls.Extra;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -59,6 +60,16 @@ namespace TeleportMenu
 
                 Vertical area = new Vertical();
                 area.Controls.Add(new EasyIMGUI.Controls.Automatic.Space() { Value = 25 });
+                area.Controls.Add(new HorizontalCenter()
+                {
+                    Controls =
+                    {
+                        new EasyIMGUI.Controls.Automatic.Label()
+                        {
+                            Content = { text = "All Players" }
+                        },
+                    }
+                });
                 foreach (string name in RCC_SceneManager.Instance.get_AllPlayerNames())
                 {
                     SingleButton btn = new SingleButton();
