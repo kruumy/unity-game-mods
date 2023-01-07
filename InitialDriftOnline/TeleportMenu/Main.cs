@@ -20,10 +20,6 @@ namespace TeleportMenu
                 {
                     GUI.Root.Open();
                     MelonLogger.Msg("Menu Opened");
-                    foreach (string p in RCC_SceneManager.Instance.get_AllPlayerNames())
-                    {
-                        MelonLogger.Msg(p);
-                    }
                 }
                 else
                 {

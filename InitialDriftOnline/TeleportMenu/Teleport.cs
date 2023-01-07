@@ -6,14 +6,19 @@ namespace TeleportMenu
 {
     public static class Teleport
     {
-        private static SRAdminTools SRAdminTools = UnityEngine.Object.FindObjectOfType<SRAdminTools>();
-        public static void UpTofu()
-        {
-            GoTo(SRAdminTools.AkinaDown);
-        }
+        private static readonly SRAdminTools SRAdminTools = UnityEngine.Object.FindObjectOfType<SRAdminTools>();
+
         public static void DownTofu()
         {
             GoTo(SRAdminTools.AkagiUp);
+        }
+
+        public static void GoTo(Transform Target)
+        {
+            System.Reflection.MethodInfo method = typeof(SRAdminTools).GetMethod("LobbySpawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            RCC_SceneManager.Instance.activePlayerVehicle.gameObject.GetComponent<Rigidbody>().drag = 1000f;
+            _ = SRAdminTools.StartCoroutine((IEnumerator)method.Invoke(SRAdminTools, new object[] { Target }));
+            MelonLogger.Msg($"Teleported -> {Target.position}");
         }
 
         public static void ToPlayer(string PlayerName)
@@ -27,12 +32,10 @@ namespace TeleportMenu
             }
             GoTo(vehicle.gameObject.transform);
         }
-        public static void GoTo(Transform Target)
+
+        public static void UpTofu()
         {
-            System.Reflection.MethodInfo method = typeof(SRAdminTools).GetMethod("LobbySpawn", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            RCC_SceneManager.Instance.activePlayerVehicle.gameObject.GetComponent<Rigidbody>().drag = 1000f;
-            SRAdminTools.StartCoroutine((IEnumerator)method.Invoke(SRAdminTools, new object[] { Target }));
-            MelonLogger.Msg($"Teleported -> {Target.position}");
+            GoTo(SRAdminTools.AkinaDown);
         }
     }
 }

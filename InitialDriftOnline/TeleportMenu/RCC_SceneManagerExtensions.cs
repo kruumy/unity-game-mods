@@ -4,19 +4,6 @@ namespace TeleportMenu
 {
     public static class RCC_SceneManagerExtensions
     {
-        public static RCC_CarControllerV3[] get_AllPlayerVehicles(this RCC_SceneManager rcc)
-        {
-            List<RCC_CarControllerV3> result = new List<RCC_CarControllerV3>(1);
-            RCC_CarControllerV3[] allcars = UnityEngine.Object.FindObjectsOfType<RCC_CarControllerV3>();
-            foreach (RCC_CarControllerV3 car in allcars)
-            {
-                if (car.name.Contains("(Clone)"))
-                {
-                    result.Add(car);
-                }
-            }
-            return result.ToArray();
-        }
         public static string[] get_AllPlayerNames(this RCC_SceneManager rcc)
         {
             RCC_CarControllerV3[] allvehicles = rcc.get_AllPlayerVehicles();
@@ -30,6 +17,21 @@ namespace TeleportMenu
             }
             return result.ToArray();
         }
+
+        public static RCC_CarControllerV3[] get_AllPlayerVehicles(this RCC_SceneManager rcc)
+        {
+            List<RCC_CarControllerV3> result = new List<RCC_CarControllerV3>(1);
+            RCC_CarControllerV3[] allcars = UnityEngine.Object.FindObjectsOfType<RCC_CarControllerV3>();
+            foreach (RCC_CarControllerV3 car in allcars)
+            {
+                if (car.name.Contains("(Clone)"))
+                {
+                    result.Add(car);
+                }
+            }
+            return result.ToArray();
+        }
+
         public static RCC_CarControllerV3 get_PlayerVehicleByPlayerName(this RCC_SceneManager rcc, string name)
         {
             foreach (RCC_CarControllerV3 car in rcc.get_AllPlayerVehicles())

@@ -1,5 +1,6 @@
 ﻿using EasyIMGUI.Controls.Automatic;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace TeleportMenu
@@ -7,6 +8,7 @@ namespace TeleportMenu
     public static class GUI
     {
         public static readonly EasyIMGUI.MelonLoader.Interface.Menu Root = new EasyIMGUI.MelonLoader.Interface.Menu();
+
         public static void Initialize()
         {
             SingleButton btn1 = new SingleButton();
@@ -16,8 +18,10 @@ namespace TeleportMenu
             btn2.Content.text = "Down Tofu";
             btn2.OnButtonPressed += (object ob, EventArgs e) => Teleport.DownTofu();
 
-            TextField PlayerNameField = new TextField();
-            PlayerNameField.Value = string.Empty;
+            TextField PlayerNameField = new TextField
+            {
+                Value = string.Empty
+            };
 
             SingleButton btn3 = new SingleButton();
             btn3.Content.text = "To Player";
@@ -44,6 +48,27 @@ namespace TeleportMenu
                     }
                 }
             });
+            Root.OnOpen += (object ob, EventArgs e) =>
+            {
+                Window win = Root.Controls[0] as Window;
+
+                if (win.Controls.Last() is Vertical v)
+                {
+                    _ = win.Controls.Remove(v);
+                }
+
+                Vertical area = new Vertical();
+                area.Controls.Add(new EasyIMGUI.Controls.Automatic.Space() { Value = 25 });
+                foreach (string name in RCC_SceneManager.Instance.get_AllPlayerNames())
+                {
+                    SingleButton btn = new SingleButton();
+                    btn.Content.text = name;
+                    btn.OnButtonPressed += (object ob2, EventArgs e2) => PlayerNameField.Value = name;
+                    area.Controls.Add(btn);
+                }
+                win.Dimensions = new Rect(win.Dimensions.x, win.Dimensions.y, win.Dimensions.width, 0);
+                win.Controls.Add(area);
+            };
         }
     }
 }
