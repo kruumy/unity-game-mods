@@ -29,7 +29,12 @@
         public static bool MotionBlur
         {
             get => RCC_SceneManager.Instance.activeMainCamera.get_PostProcessingBehaviour().profile.motionBlur.enabled;
-            set => RCC_SceneManager.Instance.activeMainCamera.get_PostProcessingBehaviour().profile.motionBlur.enabled = value;
+            set
+            {
+                RCC_SceneManager.Instance.activeMainCamera.get_PostProcessingBehaviour().profile.motionBlur.enabled = value;
+                UnityEngine.PostProcessing.MotionBlurModel.Settings settings = RCC_SceneManager.Instance.activeMainCamera.get_PostProcessingBehaviour().profile.motionBlur.settings;
+                settings.shutterAngle = 180;
+            }
         }
 
         public static void Enable()
