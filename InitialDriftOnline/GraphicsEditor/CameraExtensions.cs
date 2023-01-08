@@ -15,7 +15,7 @@ namespace GraphicsEditor
             {
                 ppb = camera.gameObject.AddComponent<PostProcessingBehaviour>();
             }
-
+            ppb.enabled = true;
             if (ppb.profile == null)
             {
                 ppb.profile = new PostProcessingProfile();

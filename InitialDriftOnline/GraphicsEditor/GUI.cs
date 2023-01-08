@@ -19,7 +19,7 @@ namespace GraphicsEditor
                 Dimensions = new UnityEngine.Rect(10, 10, 250, 0),
             });
 
-            foreach (System.Reflection.PropertyInfo prop in typeof(GraphicsWrapper).GetProperties(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public))
+            foreach (System.Reflection.PropertyInfo prop in typeof(PostProcessingWrapper).GetProperties(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public))
             {
                 Toggle toggle = new Toggle();
                 toggle.Content.text = prop.Name;

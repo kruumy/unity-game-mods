@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CameraExtensions.cs" />
-    <Compile Include="GraphicsWrapper.cs" />
+    <Compile Include="PostProcessingWrapper.cs" />
     <Compile Include="GUI.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Preferences.cs" />

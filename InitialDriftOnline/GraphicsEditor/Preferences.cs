@@ -14,20 +14,20 @@ namespace GraphicsEditor
 
         public static void Save()
         {
-            MotionBlur.Value = GraphicsWrapper.MotionBlur;
-            Bloom.Value = GraphicsWrapper.Bloom;
-            ChromaticAberration.Value = GraphicsWrapper.ChromaticAberration;
-            AmbientOcclusion.Value = GraphicsWrapper.AmbientOcclusion;
-            DepthOfField.Value = GraphicsWrapper.DepthOfField;
+            MotionBlur.Value = PostProcessingWrapper.MotionBlur;
+            Bloom.Value = PostProcessingWrapper.Bloom;
+            ChromaticAberration.Value = PostProcessingWrapper.ChromaticAberration;
+            AmbientOcclusion.Value = PostProcessingWrapper.AmbientOcclusion;
+            DepthOfField.Value = PostProcessingWrapper.DepthOfField;
             MelonPreferences.Save();
         }
         public static void Load()
         {
-            GraphicsWrapper.MotionBlur = MotionBlur.Value;
-            GraphicsWrapper.Bloom = Bloom.Value;
-            GraphicsWrapper.ChromaticAberration = ChromaticAberration.Value;
-            GraphicsWrapper.AmbientOcclusion = AmbientOcclusion.Value;
-            GraphicsWrapper.DepthOfField = DepthOfField.Value;
+            PostProcessingWrapper.MotionBlur = MotionBlur.Value;
+            PostProcessingWrapper.Bloom = Bloom.Value;
+            PostProcessingWrapper.ChromaticAberration = ChromaticAberration.Value;
+            PostProcessingWrapper.AmbientOcclusion = AmbientOcclusion.Value;
+            PostProcessingWrapper.DepthOfField = DepthOfField.Value;
             MelonPreferences.Load();
         }
     }

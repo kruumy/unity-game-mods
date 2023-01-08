@@ -36,7 +36,7 @@ namespace GraphicsEditor
             if (car == RCC_SceneManager.Instance.activePlayerVehicle)
             {
                 await Task.Delay(1000);
-                GraphicsWrapper.Enable();
+                PostProcessingWrapper.Enable();
                 Preferences.Load();
             }
         }

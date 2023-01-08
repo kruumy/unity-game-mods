@@ -1,6 +1,6 @@
 ﻿namespace GraphicsEditor
 {
-    public static class GraphicsWrapper
+    public static class PostProcessingWrapper
     {
         public static bool AmbientOcclusion
         {
