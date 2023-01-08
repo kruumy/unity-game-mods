@@ -14,7 +14,7 @@ namespace GraphicsEditor
             {
                 Content =
                 {
-                    text = "CameraEditor"
+                    text = "Graphics Editor"
                 },
                 Dimensions = new UnityEngine.Rect(10, 10, 250, 0),
             });
