@@ -15,13 +15,13 @@ namespace AllTrophyStoreItemsUnlocker
 {
     public class Main : MelonMod
     {
-        public override void OnApplicationStart()
+        public override void OnInitializeMelon()
         {
             MelonLogger.Msg("All Trophy Store Items Unlocker Loaded!");
         }
 
         [HarmonyPatch(typeof(MainMenu), "Open")]
-        public class MainMenuOpen
+        public static class MainMenuOpen
         {
             [HarmonyPostfix]
             public static void Postfix()
