@@ -14,20 +14,16 @@ namespace ImNotHacking
         public override void OnInitializeMelon()
         {
             MelonLogger.Msg("ImNotHacking Loaded!");
-
-
-
-
         }
 
         // fix ambiguious
-        [HarmonyPatch(typeof(Btd6Player), "CheckHakrStatus")]
+        [HarmonyPatch(typeof(Btd6Player), "CheckHakrStatus", new Type[] { })]
         public static class CheckHakrStatusPatch
         {
             [HarmonyPostfix]
             public static void Postfix(ref Il2CppSystem.Threading.Tasks.Task<Btd6Player.HakrStatus> __result)
             {
-                Btd6Player.HakrStatus res = __result.Result;
+                Btd6Player.HakrStatus res = new Btd6Player.HakrStatus();
                 res.ledrbrd = false;
                 res.genrl = false;
                 __result = new Il2CppSystem.Threading.Tasks.Task<Btd6Player.HakrStatus>(res);
