@@ -16,7 +16,6 @@ namespace ImNotHacking
             MelonLogger.Msg("ImNotHacking Loaded!");
         }
 
-        // fix ambiguious
         [HarmonyPatch(typeof(Btd6Player), "CheckHakrStatus", new Type[] { })]
         public static class CheckHakrStatusPatch
         {
@@ -41,6 +40,8 @@ namespace ImNotHacking
                 Il2CppAssets.Scripts.Unity.Player.Btd6Player.HakrStatus phax = Game.Player.Hakxr;
                 phax.ledrbrd = false;
                 phax.genrl = false;
+                Game.instance.playerService.Player.Hakxr = phax;
+                Game.instance.playerService.Player._Hakxr_k__BackingField = phax;
                 Game.Player.Hakxr = phax;
                 Game.Player._Hakxr_k__BackingField = phax;
                 MelonLogger.Msg("Set player hack status to false");
