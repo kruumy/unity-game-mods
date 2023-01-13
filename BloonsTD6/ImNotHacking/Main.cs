@@ -1,7 +1,5 @@
 ﻿using HarmonyLib;
-using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Player;
-using Il2CppAssets.Scripts.Unity.UI_New.Main;
 using MelonLoader;
 
 [assembly: MelonInfo(typeof(ImNotHacking.Main), "ImNotHacking", "1.0.0", "kruumy")]
@@ -16,6 +14,28 @@ namespace ImNotHacking
             MelonLogger.Msg("ImNotHacking Loaded!");
         }
 
+        [HarmonyPatch(typeof(Btd6Player.__c), "_CheckHakrStatus_b__190_0", typeof(Il2CppSystem.Collections.Generic.KeyValuePair<string, long>))]
+        public static class _CheckHakrStatus_b__190_0Patch
+        {
+            [HarmonyPostfix]
+            public static void Postfix(ref bool __result)
+            {
+                __result = false;
+                MelonLogger.Msg("Modified _CheckHakrStatus_b__190_0 result");
+            }
+        }
+
+        [HarmonyPatch(typeof(Btd6Player.__c), "_CheckHakrStatus_b__190_1", typeof(Il2CppSystem.Collections.Generic.KeyValuePair<string, long>))]
+        public static class _CheckHakrStatus_b__190_1Patch
+        {
+            [HarmonyPostfix]
+            public static void Postfix(ref bool __result)
+            {
+                __result = false;
+                MelonLogger.Msg("Modified _CheckHakrStatus_b__190_1 result");
+            }
+        }
+
         [HarmonyPatch(typeof(Btd6Player), "CheckHakrStatus", new Type[] { })]
         public static class CheckHakrStatusPatch
         {
@@ -25,26 +45,43 @@ namespace ImNotHacking
                 Btd6Player.HakrStatus res = new Btd6Player.HakrStatus();
                 res.ledrbrd = false;
                 res.genrl = false;
-                __result = new Il2CppSystem.Threading.Tasks.Task<Btd6Player.HakrStatus>(res);
+                __result.m_result = res;
                 MelonLogger.Msg("Modified CheckHakrStatus result");
             }
         }
 
-
-        [HarmonyPatch(typeof(MainMenu), "Open")]
-        public static class MainMenuOpenPatch
+        [HarmonyPatch(typeof(Btd6Player), "CheckMultiHakrStatus")]
+        public static class CheckMultiHakrStatusPatch
         {
             [HarmonyPostfix]
-            public static void Postfix()
+            public static void Postfix(ref Il2CppSystem.Threading.Tasks.Task<bool> __result)
             {
-                Il2CppAssets.Scripts.Unity.Player.Btd6Player.HakrStatus phax = Game.Player.Hakxr;
-                phax.ledrbrd = false;
-                phax.genrl = false;
-                Game.instance.playerService.Player.Hakxr = phax;
-                Game.instance.playerService.Player._Hakxr_k__BackingField = phax;
-                Game.Player.Hakxr = phax;
-                Game.Player._Hakxr_k__BackingField = phax;
-                MelonLogger.Msg("Set player hack status to false");
+                __result.m_result = false;
+                MelonLogger.Msg("Modified CheckMultiHakrStatus result");
+            }
+        }
+
+        [HarmonyPatch(typeof(Btd6Player), "Hakxr", MethodType.Setter)]
+        public static class HakxrSetterPatch
+        {
+            [HarmonyPrefix]
+            public static void Prefix(ref Btd6Player.HakrStatus value)
+            {
+                value.ledrbrd = false;
+                value.genrl = false;
+                MelonLogger.Msg("Modified HakxrSetter value");
+            }
+        }
+
+        [HarmonyPatch(typeof(Btd6Player), "Hakxr", MethodType.Getter)]
+        public static class HakxrGetterPatch
+        {
+            [HarmonyPostfix]
+            public static void Postfix(ref Btd6Player.HakrStatus __result)
+            {
+                __result.ledrbrd = false;
+                __result.genrl = false;
+                MelonLogger.Msg("Modified HakxrGetter result");
             }
         }
     }

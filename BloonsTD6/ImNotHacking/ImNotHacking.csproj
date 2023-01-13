@@ -31,6 +31,12 @@
     <Reference Include="MelonLoader">
       <HintPath>D:\SteamLibrary\steamapps\common\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\SteamLibrary\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\SteamLibrary\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
