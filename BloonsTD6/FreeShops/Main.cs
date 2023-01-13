@@ -19,9 +19,10 @@ namespace FreeShops
         public static class MainMenuOpen
         {
             [HarmonyPostfix]
-            public static void Prefix(ref int amount, string spentOn)
+            public static void Prefix(ref int amount, ref string spentOn)
             {
                 amount = 0;
+                spentOn = "";
             }
         }
     }
