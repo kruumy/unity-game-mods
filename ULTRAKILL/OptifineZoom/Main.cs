@@ -18,9 +18,6 @@ namespace OptifineZoom
             {
                 CameraController.Instance.defaultFov = FROM_FOV;
             }
-
-
-            EnemyTracker.Instance.enemies[0].transform.po
         }
     }
 }
