@@ -12,11 +12,10 @@ namespace HealthBars
         public readonly static Texture2D YellowTexture = MakeTex(1, 1, Color.yellow);
         public readonly static Texture2D GreenTexture = MakeTex(1, 1, Color.green);
         public readonly static Texture2D BlackTexture = MakeTex(1, 1, Color.black);
-        public readonly static GUIStyle RedStyle = new GUIStyle()
+        public readonly static GUIStyle BaseStyle = new GUIStyle()
         {
             normal =
             {
-                background = RedTexture,
                 textColor = Color.black
             },
             richText = false,
@@ -25,21 +24,32 @@ namespace HealthBars
             wordWrap = false,
             alignment = TextAnchor.MiddleCenter
         };
-        public readonly static GUIStyle YellowStyle = new GUIStyle(RedStyle)
+        public readonly static GUIStyle RedStyle = new GUIStyle(BaseStyle)
+        {
+            normal =
+            {
+                background = RedTexture,
+            }
+        };
+        public readonly static GUIStyle RedStyleNoText = new GUIStyle(RedStyle)
+        {
+            fontSize = 1
+        };
+        public readonly static GUIStyle YellowStyle = new GUIStyle(BaseStyle)
         {
             normal =
             {
                 background = YellowTexture,
             },
         };
-        public readonly static GUIStyle GreenStyle = new GUIStyle(RedStyle)
+        public readonly static GUIStyle GreenStyle = new GUIStyle(BaseStyle)
         {
             normal =
             {
                 background = GreenTexture,
             },
         };
-        public readonly static GUIStyle BlackStyle = new GUIStyle(RedStyle)
+        public readonly static GUIStyle BlackStyle = new GUIStyle(BaseStyle)
         {
             normal =
             {
@@ -58,19 +68,19 @@ namespace HealthBars
                     if (enemyPosOnScreen.z > 0)
                     {
                         float globalScale = 20.0f;
-                        int width = (int)Mathf.Clamp(75 * globalScale / enemyPosOnScreen.z, 0, 100);
-                        int height = (int)Mathf.Clamp(15 * globalScale / enemyPosOnScreen.z, 0, 20);
-                        int fontSize = (int)Mathf.Clamp(14 * globalScale / enemyPosOnScreen.z, 0, 18);
+                        float width = Mathf.Clamp(75 / enemyPosOnScreen.z, 0, 100) * globalScale;
+                        float height = Mathf.Clamp(15 / enemyPosOnScreen.z, 0, 20) * globalScale;
+                        int fontSize = (int)(Mathf.Clamp(14 / enemyPosOnScreen.z, 0, 18) * globalScale);
                         RedStyle.fontSize = fontSize;
                         YellowStyle.fontSize = fontSize;
                         GreenStyle.fontSize = fontSize;
-                        int healthWidth = (int)Map(enemy.health, 0, MaxHealth[enemy.enemyType], 0, width);
-                        int healthPercentage = ((int)(healthWidth * (100.0f / width)));
+                        float healthWidth = Map(enemy.health, 0, MaxHealth[enemy.enemyType], 0, width);
+                        float healthPercentage = healthWidth * (100.0f / width);
                         enemyPosOnScreen.x -= width / 2;
                         enemyPosOnScreen.y -= height / 2;
                         GUI.Box(new Rect(enemyPosOnScreen.x, enemyPosOnScreen.y, width, height), GUIContent.none, BlackStyle);
-                        GUIStyle healthStyle = healthPercentage > 80 ? GreenStyle : healthPercentage > 40 ? YellowStyle : RedStyle;
-                        GUI.Box(new Rect(enemyPosOnScreen.x, enemyPosOnScreen.y, healthWidth, height), healthPercentage.ToString() + "%", healthStyle);
+                        GUIStyle healthStyle = healthPercentage > 80 ? GreenStyle : healthPercentage > 40 ? YellowStyle : healthPercentage > 20 ? RedStyle : RedStyleNoText;
+                        GUI.Box(new Rect(enemyPosOnScreen.x, enemyPosOnScreen.y, healthWidth, height), Mathf.CeilToInt(healthPercentage).ToString() + "%", healthStyle);
                     }
                 }
             }
