@@ -19,7 +19,8 @@ namespace BetterThirdPerson
                     }
                     else
                     {
-                        LocalPosition.Set();
+                        LocalPosition.Enforce();
+                        FieldOfView.Enforce();
                         break;
                     }
                 }
@@ -28,11 +29,12 @@ namespace BetterThirdPerson
 
         public static class LocalPosition
         {
-            private static float _X = 0f;
+            public readonly static Vector3 Default = new Vector3(0, 0, 0);
+            private static float _X = Default.x;
 
-            private static float _Y = 0f;
+            private static float _Y = Default.y;
 
-            private static float _Z = 0f;
+            private static float _Z = Default.z;
 
             public static float X
             {
@@ -77,7 +79,7 @@ namespace BetterThirdPerson
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static void Set()
+            public static void Enforce()
             {
                 Set(_X, _Y, _Z);
             }
@@ -94,5 +96,40 @@ namespace BetterThirdPerson
                 }
             }
         }
+        public static class FieldOfView
+        {
+            public readonly static float Default = 60f;
+            private static float _Value = Default;
+            public static float Value
+            {
+                get
+                {
+                    foreach (RoR2.CameraRigController cam in UnityEngine.Object.FindObjectsOfType<RoR2.CameraRigController>())
+                    {
+                        if (cam.isActiveAndEnabled)
+                        {
+                            return cam.baseFov;
+                        }
+                    }
+                    return _Value;
+                }
+                set
+                {
+                    _Value = value;
+                    foreach (RoR2.CameraRigController cam in UnityEngine.Object.FindObjectsOfType<RoR2.CameraRigController>())
+                    {
+                        if (cam.isActiveAndEnabled)
+                        {
+                            cam.baseFov = value;
+                        }
+                    }
+                }
+            }
+            public static void Enforce()
+            {
+                Value = _Value;
+            }
+        }
+
     }
 }
