@@ -24,15 +24,14 @@ namespace ProperSave.StopDeletingMySave
             Logger.LogInfo("Found Target " + RunOnServerGameOver.Name);
             Harmony harmony = new Harmony(PluginGUID);
             HarmonyMethod harmonyMethod = new HarmonyMethod(typeof(Main), "RunOnServerGameOver_Prefix");
-            harmonyMethod.method = typeof(Main).GetMethod("RunOnServerGameOver_Prefix", BindingFlags.Instance | BindingFlags.NonPublic);
+            harmonyMethod.method = typeof(Main).GetMethod("RunOnServerGameOver_Prefix", BindingFlags.Static | BindingFlags.NonPublic);
             Logger.LogInfo("Created Prefix " + harmonyMethod.method.Name);
             harmony.Patch(RunOnServerGameOver, harmonyMethod);
             Logger.LogInfo("Patched ProperSave.Saving.RunOnServerGameOver Successfully!");
         }
 
-        private bool RunOnServerGameOver_Prefix()
+        private static bool RunOnServerGameOver_Prefix()
         {
-            Logger.LogInfo("Preventing Execution of ProperSave.Saving.RunOnServerGameOver");
             return false;
         }
     }
