@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33318.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetterThirdPerson", "BetterThirdPerson\BetterThirdPerson.csproj", "{7EFD4673-24C0-469D-BEAA-029BD55E96E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastForward", "FastForward\FastForward.csproj", "{33B05E28-15E0-4A41-A7F0-84226827D000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastForward", "FastForward\FastForward.csproj", "{33B05E28-15E0-4A41-A7F0-84226827D000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProperSave.StopDeletingMySave", "ProperSave.StopDeletingMySave\ProperSave.StopDeletingMySave.csproj", "{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{33B05E28-15E0-4A41-A7F0-84226827D000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33B05E28-15E0-4A41-A7F0-84226827D000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33B05E28-15E0-4A41-A7F0-84226827D000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
