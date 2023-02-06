@@ -10,7 +10,7 @@ namespace ProperSave.StopDeletingMySave
     public class Main : BaseUnityPlugin
     {
         public const string PluginAuthor = "kruumy";
-        public const string PluginName = "StopDeletingMySave";
+        public const string PluginName = "ProperSave.StopDeletingMySave";
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginVersion = "1.0.0";
 

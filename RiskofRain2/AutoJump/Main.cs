@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using BepInEx.Logging;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -13,18 +12,8 @@ namespace AutoJump
         public const string PluginName = "AutoJump";
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginVersion = "1.0.0";
-        public static ManualLogSource logger;
-        public void Awake()
-        {
-            logger = this.Logger;
-
-        }
         public void Update()
         {
-
-
-
-
             if (Input.GetKey(KeyCode.Space))
             {
                 try
@@ -39,7 +28,6 @@ namespace AutoJump
                 {
 
                 }
-
             }
         }
     }
