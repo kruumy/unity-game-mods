@@ -1,8 +1,5 @@
 ﻿using BepInEx;
-using HarmonyLib;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using UnityEngine;
 
 namespace ProperSave.CommandQueue
@@ -16,33 +13,29 @@ namespace ProperSave.CommandQueue
         public const string PluginName = "ProperSave.CommandQueue";
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginVersion = "1.0.0";
-        public readonly static string LastCommandQueuePath = Path.Combine(Application.persistentDataPath, "ProperSave", "Saves") + "\\" + "LastCommandQueue" + ".csv";
+        public readonly string LastCommandQueuePath = Path.Combine(Application.persistentDataPath, "ProperSave", "Saves") + "\\" + "LastCommandQueue" + ".csv";
 
         private void Awake()
         {
-            Harmony harmony = new Harmony(PluginGUID);
-            MethodInfo SaveGame = Assembly
-               .Load("ProperSave")
-               .GetTypes()
-               .First(t => t.Name == "Saving")
-               .GetMethod("SaveGame", BindingFlags.Static | BindingFlags.NonPublic);
-            HarmonyMethod saveGame_Postfix = new HarmonyMethod(typeof(Main), "Saving_OnSavingEnded");
-            saveGame_Postfix.method = typeof(Main).GetMethod("Saving_OnSavingEnded", BindingFlags.Static | BindingFlags.NonPublic);
-            harmony.Patch(SaveGame, saveGame_Postfix);
+            ProperSave.SaveFile.OnGatherSaveData += SaveFile_OnGatherSaveData;
             ProperSave.Loading.OnLoadingEnded += Loading_OnLoadingEnded;
         }
 
-        private static void Loading_OnLoadingEnded(SaveFile _)
+        private void SaveFile_OnGatherSaveData(System.Collections.Generic.Dictionary<string, object> obj)
+        {
+            SaveAndLoad.Save(LastCommandQueuePath);
+        }
+
+        private void Loading_OnLoadingEnded(SaveFile _)
         {
             if (File.Exists(LastCommandQueuePath))
             {
                 SaveAndLoad.Load(LastCommandQueuePath);
             }
-        }
-
-        private static void Saving_OnSavingEnded()
-        {
-            SaveAndLoad.Save(LastCommandQueuePath);
+            else
+            {
+                Logger.LogInfo("CommandQueue save file does not exist!");
+            }
         }
     }
 }
