@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.StopDeletingMySa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoJump", "AutoJump\AutoJump.csproj", "{4D3C1042-E60B-410A-96F9-809EDC778979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProperSave.CommandQueue", "ProperSave.CommandQueue\ProperSave.CommandQueue.csproj", "{AB3097B4-77AF-4438-B95B-514FF7283323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.CommandQueue", "ProperSave.CommandQueue\ProperSave.CommandQueue.csproj", "{AB3097B4-77AF-4438-B95B-514FF7283323}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandQueue.Freeze", "CommandQueue.Freeze\CommandQueue.Freeze.csproj", "{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
