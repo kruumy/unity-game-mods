@@ -1,4 +1,4 @@
-﻿using EasyIMGUI.Controls.Shared;
+﻿using EasyIMGUI.Controls.Base;
 using MelonLoader;
 using System;
 using UnityEngine;
