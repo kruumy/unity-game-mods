@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using Thunderstore.PackageManager.ThunderstoreApi;
 
@@ -12,7 +13,7 @@ namespace Thunderstore.PackageManager.TUI
 
             while (true)
             {
-                DrawSelectMenu("Select An Option...", "Manage Existing Packages", "Install New Package", "Update All Packages");
+                DrawSelectMenu("Select An Option...", "Manage Existing Packages", "Install New Package", "Update All Packages", "Enable/Disable BepInEx");
                 switch (WaitForKeyInput())
                 {
                     case ConsoleKey.D1:
@@ -56,7 +57,7 @@ namespace Thunderstore.PackageManager.TUI
                                     }
                             }
                             Console.WriteLine("Complete!");
-                            Thread.Sleep(2000);
+                            Thread.Sleep(1000);
                             break;
                         }
                     case ConsoleKey.D3:
@@ -68,7 +69,23 @@ namespace Thunderstore.PackageManager.TUI
                                 Console.Write($"{item.status.Result}\n");
                             }
                             Console.WriteLine("Done!");
-                            Console.ReadLine();
+                            Thread.Sleep(1000);
+                            break;
+                        }
+                    case ConsoleKey.D4:
+                        {
+                            Console.Clear();
+                            if (File.Exists("winhttp.dll.bak"))
+                            {
+                                File.Move("winhttp.dll.bak", "winhttp.dll");
+                                Console.WriteLine("Enabled BepInEx");
+                            }
+                            else if (File.Exists("winhttp.dll"))
+                            {
+                                File.Move("winhttp.dll", "winhttp.dll.bak");
+                                Console.WriteLine("Disabled BepInEx");
+                            }
+                            Thread.Sleep(1000);
                             break;
                         }
                 }
