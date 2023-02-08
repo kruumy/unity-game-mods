@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.CommandQueue", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandQueue.Freeze", "CommandQueue.Freeze\CommandQueue.Freeze.csproj", "{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunderstore.PackageManager", "Thunderstore.PackageManager\Thunderstore.PackageManager.csproj", "{61733852-03D0-4D16-AAB2-A1B866DA904E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
