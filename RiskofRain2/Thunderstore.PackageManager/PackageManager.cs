@@ -36,7 +36,7 @@ namespace Thunderstore.PackageManager
         }
 
 
-        public async Task DownloadAndInstallPackage(Package package, bool overWrite = false)
+        public async Task DownloadAndInstallPackage(Package package, bool overWrite = false, bool downloadDependencies = true)
         {
             if ((package.Name == "BepInExPack" && package.Namespace == "bbepis"))
             {
@@ -54,9 +54,12 @@ namespace Thunderstore.PackageManager
             }
             ZipFile.ExtractToDirectory(zipPath.FullName, extractFolder.FullName);
             zipPath.Delete();
-            foreach (Task<Package> dep in package.DependenciesToPackages(false))
+            if (downloadDependencies)
             {
-                await DownloadAndInstallPackage(await dep);
+                foreach (Task<Package> dep in package.DependenciesToPackages(false))
+                {
+                    await DownloadAndInstallPackage(await dep, overWrite, downloadDependencies);
+                }
             }
         }
 

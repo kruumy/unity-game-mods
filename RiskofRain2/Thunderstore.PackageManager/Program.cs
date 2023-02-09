@@ -43,12 +43,12 @@ namespace Thunderstore.PackageManager.TUI
                             {
                                 case 2:
                                     {
-                                        packageManager.DownloadAndInstallPackage(Package.Get(unsortedItems[0], unsortedItems[1]).Result).Wait();
+                                        packageManager.DownloadAndInstallPackage(Package.Get(unsortedItems[0], unsortedItems[1]).Result, false, true).Wait();
                                         break;
                                     }
                                 case 3:
                                     {
-                                        packageManager.DownloadAndInstallPackage(Package.Get(unsortedItems[0], unsortedItems[1], unsortedItems[2]).Result).Wait();
+                                        packageManager.DownloadAndInstallPackage(Package.Get(unsortedItems[0], unsortedItems[1], unsortedItems[2]).Result, false, true).Wait();
                                         break;
                                     }
                                 default:

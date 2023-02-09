@@ -77,7 +77,7 @@ namespace Thunderstore.PackageManager.ThunderstoreApi
                 if (!IsLatestVersion(latestPackage))
                 {
 
-                    await new PackageManager(directory.Parent).DownloadAndInstallPackage(latestPackage, true);
+                    await new PackageManager(directory.Parent).DownloadAndInstallPackage(latestPackage, true, false);
                     return UpdateStatus.Updated;
                 }
                 else
