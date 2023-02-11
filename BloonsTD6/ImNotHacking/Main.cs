@@ -46,7 +46,32 @@ namespace ImNotHacking
                 res.ledrbrd = false;
                 res.genrl = false;
                 __result.m_result = res;
+
+                // todo: find out why this crashs game
+                //__result = new Il2CppSystem.Threading.Tasks.Task<Btd6Player.HakrStatus>(new Func<Btd6Player.HakrStatus>(new testdel(test)));
+                //__result.Start();
                 MelonLogger.Msg("Modified CheckHakrStatus result");
+
+            }
+        }
+
+        delegate Btd6Player.HakrStatus testdel();
+        private static Btd6Player.HakrStatus test()
+        {
+            Btd6Player.HakrStatus res = new Btd6Player.HakrStatus();
+            res.ledrbrd = false;
+            res.genrl = false;
+            return res;
+        }
+
+        [HarmonyPatch(typeof(Btd6Player), "CheckHakrStatus", new Type[] { typeof(string) })]
+        public static class CheckHakrStatusboolPatch
+        {
+            [HarmonyPostfix]
+            public static void Postfix(ref Il2CppSystem.Threading.Tasks.Task<bool> __result)
+            {
+                __result.m_result = false;
+                MelonLogger.Msg("Modified CheckHakrStatusbool result");
             }
         }
 
