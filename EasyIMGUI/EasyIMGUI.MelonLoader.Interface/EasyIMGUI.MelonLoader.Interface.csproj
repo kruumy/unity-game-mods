@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Libs\**" />
+    <EmbeddedResource Remove="Libs\**" />
+    <None Remove="Libs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyIMGUI.Controls\EasyIMGUI.Controls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MelonLoader">
+      <HintPath>Libs\MelonLoader.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
