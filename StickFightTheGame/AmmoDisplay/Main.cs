@@ -1,12 +1,12 @@
 ﻿using MelonLoader;
 
-namespace HealthBars
+namespace AmmoDisplay
 {
-    public class Melon : MelonMod
+    public class Main : MelonMod
     {
         public override void OnInitializeMelon()
         {
-            HealthBars.Show();
+            AmmoDisplay.Show();
         }
     }
 }

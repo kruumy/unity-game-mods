@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthBars", "HealthBars\HealthBars.csproj", "{7A549461-36EF-47FF-AD28-16495926C676}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmmoDisplay", "AmmoDisplay\AmmoDisplay.csproj", "{2388CB23-89B6-43E1-B4B8-02A7D6FA6CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPunch", "AutoPunch\AutoPunch.csproj", "{6024CF36-30E8-40EE-B1F8-FD35E21B3D52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7A549461-36EF-47FF-AD28-16495926C676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A549461-36EF-47FF-AD28-16495926C676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A549461-36EF-47FF-AD28-16495926C676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2388CB23-89B6-43E1-B4B8-02A7D6FA6CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2388CB23-89B6-43E1-B4B8-02A7D6FA6CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2388CB23-89B6-43E1-B4B8-02A7D6FA6CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2388CB23-89B6-43E1-B4B8-02A7D6FA6CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6024CF36-30E8-40EE-B1F8-FD35E21B3D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6024CF36-30E8-40EE-B1F8-FD35E21B3D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6024CF36-30E8-40EE-B1F8-FD35E21B3D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6024CF36-30E8-40EE-B1F8-FD35E21B3D52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

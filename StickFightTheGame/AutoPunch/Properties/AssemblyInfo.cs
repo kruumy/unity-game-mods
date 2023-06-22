@@ -1,21 +1,18 @@
-﻿using MelonLoader;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HealthBars")]
+[assembly: AssemblyTitle("AutoPunch")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HealthBars")]
+[assembly: AssemblyProduct("AutoPunch")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
-[assembly: MelonInfo(typeof(HealthBars.Main), "Health Bars", "1.0.0", "kruumy")]
-[assembly: MelonGame("Landfall West", "Stick Fight: The Game")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
@@ -23,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7a549461-36ef-47ff-ad28-16495926c676")]
+[assembly: Guid("6024cf36-30e8-40ee-b1f8-fd35e21b3d52")]
 
 // Version information for an assembly consists of the following four values:
 //

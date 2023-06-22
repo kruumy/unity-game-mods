@@ -78,7 +78,7 @@ namespace HealthBars
         {
             foreach ( Controller player in GameManager.Instance.playersAlive )
             {
-                Vector3 vector = player.GetPrivateField<Transform>("torso").position;
+                Vector3 vector = player.gameObject.transform.GetChild(0).GetChild(8).position;
                 vector.y += 1;
                 vector.z += 0.70f;
                 Vector3 posOnScreen = Camera.main.WorldToScreenPoint(vector);
