@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 
@@ -288,6 +289,75 @@ namespace AddFoVSettings
             {
                 SetValue(!value);
             }
+        }
+    }
+
+    public class MenuButton
+    {
+        public string settingName;
+        public string settingDescription;
+        SubPanel panelLocation;
+        public bool showInPauseSettings;
+
+        private string GetSubPanelName( SubPanel panel )
+        {
+            switch ( panel )
+            {
+                case SubPanel.Gameplay:
+                    return "SettingsSubPanel, Gameplay";
+                case SubPanel.KeyboardControls:
+                    return "SettingsSubPanel, Controls (M&KB)";
+                case SubPanel.GamepadControls:
+                    return "SettingsSubPanel, Controls (Gamepad)";
+                case SubPanel.Audio:
+                    return "SettingsSubPanel, Audio";
+                case SubPanel.Video:
+                    return "SettingsSubPanel, Video";
+                case SubPanel.Graphics:
+                    return "SettingsSubPanel, Graphics";
+                default:
+                    return "";
+            }
+        }
+
+        public MenuButton( string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true )
+        {
+            this.settingName = settingName;
+            this.settingDescription = settingDescription;
+            this.panelLocation = panelLocation;
+            this.showInPauseSettings = showInPauseSettings;
+
+            On.RoR2.UI.MainMenu.SubmenuMainMenuScreen.OnEnter += ( orig, self, mainMenuController ) =>
+            {
+                orig(self, mainMenuController);
+                AddSettingField(self.submenuPanelInstance.transform);
+            };
+            On.RoR2.UI.PauseScreenController.OpenSettingsMenu += ( orig, self ) =>
+            {
+                orig(self);
+                if ( showInPauseSettings )
+                    AddSettingField(self.submenuObject.transform);
+            };
+        }
+
+        public event UnityAction OnButtonPressed;
+
+        void AddSettingField( Transform settingsPanelInstance )
+        {
+            GameObject buttonToInstantiate = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(SubPanel.Gameplay) + "/Scroll View/Viewport/VerticalLayout/SettingsEntryButton, Bool (Screen Distortion)").gameObject;
+            Transform gameplaySubPanel = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(panelLocation) + "/Scroll View/Viewport/VerticalLayout");
+
+            GameObject buttonCopy = GameObject.Instantiate(buttonToInstantiate);
+            buttonCopy.transform.SetParent(gameplaySubPanel);
+            buttonCopy.name = "SettingsEntryButton, (" + settingName + ")";
+            buttonCopy.GetComponent<CarouselController>().nameLabel.token = settingName;
+            UnityEngine.Object.Destroy(buttonCopy.GetComponent<CarouselController>());
+            UnityEngine.Object.Destroy(buttonCopy.transform.FindChild("CarouselRect").gameObject);
+            HGButton hgButton = buttonCopy.GetComponent<HGButton>();
+            hgButton.onClick.RemoveAllListeners();
+            hgButton.onClick.AddListener(OnButtonPressed);
+            hgButton.disableGamepadClick = false;
+            hgButton.disablePointerClick = false;
         }
     }
 
