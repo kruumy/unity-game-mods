@@ -1,6 +1,6 @@
-﻿using System;
+﻿using RoR2.UI;
+using System;
 using System.Linq;
-using RoR2.UI;
 using UnityEngine;
 
 
@@ -33,9 +33,9 @@ namespace AddFoVSettings
         SettingsSlider settingsSlider = null;
         public float revertValue;
 
-        private string GetSubPanelName(SubPanel panel)
+        private string GetSubPanelName( SubPanel panel )
         {
-            switch (panel)
+            switch ( panel )
             {
                 case SubPanel.Gameplay:
                     return "SettingsSubPanel, Gameplay";
@@ -54,7 +54,7 @@ namespace AddFoVSettings
             }
         }
 
-        public MenuSlider(float defaultValue, float maxValue, float minValue, bool wholeNumbers, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true)
+        public MenuSlider( float defaultValue, float maxValue, float minValue, bool wholeNumbers, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true )
         {
             this.defaultValue = defaultValue;
             this.maxValue = maxValue;
@@ -67,20 +67,20 @@ namespace AddFoVSettings
 
             //setup playerprefs
             token = settingName.Replace(" ", "");
-            if (!PlayerPrefs.HasKey(token)) PlayerPrefs.SetFloat(token, defaultValue);
+            if ( !PlayerPrefs.HasKey(token) ) PlayerPrefs.SetFloat(token, defaultValue);
             value = PlayerPrefs.GetFloat(token);
 
             On.RoR2.UI.SettingsSlider.OnSliderValueChanged += hook_OnSliderValueChanged;
-            On.RoR2.UI.MainMenu.SubmenuMainMenuScreen.OnEnter += (orig, self, mainMenuController) =>
+            On.RoR2.UI.MainMenu.SubmenuMainMenuScreen.OnEnter += ( orig, self, mainMenuController ) =>
             {
                 orig(self, mainMenuController);
                 AddSettingField(self.submenuPanelInstance.transform);
             };
             On.RoR2.UI.SettingsPanelController.RevertChanges += hook_RevertChanges;
-            On.RoR2.UI.PauseScreenController.OpenSettingsMenu += (orig, self) =>
+            On.RoR2.UI.PauseScreenController.OpenSettingsMenu += ( orig, self ) =>
             {
                 orig(self);
-                if (showInPauseSettings)
+                if ( showInPauseSettings )
                     AddSettingField(self.submenuObject.transform);
             };
         }
@@ -90,23 +90,23 @@ namespace AddFoVSettings
             return value;
         }
 
-        public void SetValue(float newValue)
+        public void SetValue( float newValue )
         {
             value = newValue;
-            if (settingsSlider)
+            if ( settingsSlider )
             {
                 settingsSlider.valueText.text = value.ToString();
                 settingsSlider.slider.value = value;
             }
             PlayerPrefs.SetFloat(token, newValue);
-            if (OnSliderChanged != null)
+            if ( OnSliderChanged != null )
                 OnSliderChanged.Invoke(newValue);
         }
 
-        public delegate void SliderChanged(float newValue);
+        public delegate void SliderChanged( float newValue );
         public event SliderChanged OnSliderChanged;
 
-        void AddSettingField(Transform settingsPanelInstance)
+        void AddSettingField( Transform settingsPanelInstance )
         {
             GameObject buttonToInstantiate = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(SubPanel.Gameplay) + "/Scroll View/Viewport/VerticalLayout/SettingsEntryButton, Slider (Screen Shake Scale)").gameObject;
             Transform gameplaySubPanel = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(panelLocation) + "/Scroll View/Viewport/VerticalLayout");
@@ -130,21 +130,21 @@ namespace AddFoVSettings
             revertValue = value;
         }
 
-        void hook_RevertChanges(On.RoR2.UI.SettingsPanelController.orig_RevertChanges orig, SettingsPanelController self)
+        void hook_RevertChanges( On.RoR2.UI.SettingsPanelController.orig_RevertChanges orig, SettingsPanelController self )
         {
-            if (!settingsSlider) return;
-            if (self.settingsControllers != null && self.settingsControllers.Contains(settingsSlider))
+            if ( !settingsSlider ) return;
+            if ( self.settingsControllers != null && self.settingsControllers.Contains(settingsSlider) )
             {
                 SetValue(revertValue);
             }
             orig(self);
         }
 
-        void hook_OnSliderValueChanged(On.RoR2.UI.SettingsSlider.orig_OnSliderValueChanged orig, SettingsSlider self, float newValue)
+        void hook_OnSliderValueChanged( On.RoR2.UI.SettingsSlider.orig_OnSliderValueChanged orig, SettingsSlider self, float newValue )
         {
             orig(self, newValue);
 
-            if (self.nameToken == token)
+            if ( self.nameToken == token )
             {
                 SetValue(newValue);
             }
@@ -164,9 +164,9 @@ namespace AddFoVSettings
         public bool revertValue;
         public CarouselController controller;
 
-        private string GetSubPanelName(SubPanel panel)
+        private string GetSubPanelName( SubPanel panel )
         {
-            switch (panel)
+            switch ( panel )
             {
                 case SubPanel.Gameplay:
                     return "SettingsSubPanel, Gameplay";
@@ -185,7 +185,7 @@ namespace AddFoVSettings
             }
         }
 
-        public MenuCheckbox(bool defaultValue, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true)
+        public MenuCheckbox( bool defaultValue, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true )
         {
             this.defaultValue = defaultValue;
             this.settingName = settingName;
@@ -195,7 +195,7 @@ namespace AddFoVSettings
 
             //setup playerprefs
             token = settingName.Replace(" ", "");
-            if (!PlayerPrefs.HasKey(token))
+            if ( !PlayerPrefs.HasKey(token) )
             {
                 PlayerPrefs.SetInt(token, Convert.ToInt32(defaultValue));
                 Log.LogInfo("Added new token" + token);
@@ -203,23 +203,23 @@ namespace AddFoVSettings
             SetValue(Convert.ToBoolean(PlayerPrefs.GetInt(token)));
 
             On.RoR2.UI.CarouselController.BoolCarousel += hook_BoolCarousel;
-            On.RoR2.UI.MainMenu.SubmenuMainMenuScreen.OnEnter += (orig, self, mainMenuController) =>
+            On.RoR2.UI.MainMenu.SubmenuMainMenuScreen.OnEnter += ( orig, self, mainMenuController ) =>
             {
                 orig(self, mainMenuController);
                 AddSettingField(self.submenuPanelInstance.transform);
             };
             On.RoR2.UI.SettingsPanelController.RevertChanges += hook_RevertChanges;
-            On.RoR2.UI.PauseScreenController.OpenSettingsMenu += (orig, self) =>
+            On.RoR2.UI.PauseScreenController.OpenSettingsMenu += ( orig, self ) =>
             {
                 orig(self);
-                if (showInPauseSettings)
+                if ( showInPauseSettings )
                     AddSettingField(self.submenuObject.transform);
             };
         }
 
-        bool StringToBool(string s)
+        bool StringToBool( string s )
         {
-            if (s == null || s == "")
+            if ( s == null || s == "" )
             {
                 Log.LogError("string was null");
                 return false;
@@ -232,18 +232,18 @@ namespace AddFoVSettings
             return value;
         }
 
-        public void SetValue(bool newValue)
+        public void SetValue( bool newValue )
         {
             value = newValue;
             PlayerPrefs.SetInt(token, Convert.ToInt32(newValue));
-            if (OnCheckboxChanged != null)
+            if ( OnCheckboxChanged != null )
                 OnCheckboxChanged.Invoke(value);
         }
 
-        public delegate void CheckboxChanged(bool newValue);
+        public delegate void CheckboxChanged( bool newValue );
         public event CheckboxChanged OnCheckboxChanged;
 
-        void AddSettingField(Transform settingsPanelInstance)
+        void AddSettingField( Transform settingsPanelInstance )
         {
             GameObject buttonToInstantiate = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(SubPanel.Gameplay) + "/Scroll View/Viewport/VerticalLayout/SettingsEntryButton, Bool (Screen Distortion)").gameObject;
             Transform gameplaySubPanel = settingsPanelInstance.Find("SafeArea/SubPanelArea/" + GetSubPanelName(panelLocation) + "/Scroll View/Viewport/VerticalLayout");
@@ -259,7 +259,7 @@ namespace AddFoVSettings
             controller.nameLabel.token = settingName;
             controller.originalValue = defaultValue.ToString();
 
-            if (current != value)
+            if ( current != value )
             {
                 SetValue(current);
                 controller.BoolCarousel();
@@ -270,21 +270,21 @@ namespace AddFoVSettings
             revertValue = value;
         }
 
-        void hook_RevertChanges(On.RoR2.UI.SettingsPanelController.orig_RevertChanges orig, SettingsPanelController self)
+        void hook_RevertChanges( On.RoR2.UI.SettingsPanelController.orig_RevertChanges orig, SettingsPanelController self )
         {
-            if (!controller) return;
-            if (self.settingsControllers != null && self.settingsControllers.Contains(controller))
+            if ( !controller ) return;
+            if ( self.settingsControllers != null && self.settingsControllers.Contains(controller) )
             {
                 SetValue(revertValue);
             }
             orig(self);
         }
 
-        void hook_BoolCarousel(On.RoR2.UI.CarouselController.orig_BoolCarousel orig, CarouselController self)
+        void hook_BoolCarousel( On.RoR2.UI.CarouselController.orig_BoolCarousel orig, CarouselController self )
         {
             orig(self);
             Log.LogInfo("Bool Switched");
-            if (self.nameToken == token)
+            if ( self.nameToken == token )
             {
                 SetValue(!value);
             }
