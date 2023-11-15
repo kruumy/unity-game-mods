@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34227.203
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlwaysScanning", "AlwaysScanning\AlwaysScanning.csproj", "{29C5315A-62C1-4435-B3EF-0390D0B81756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomFOV", "CustomFOV\CustomFOV.csproj", "{37A376B5-B8A6-4D05-A8D0-5B4CE82B6E6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29C5315A-62C1-4435-B3EF-0390D0B81756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C5315A-62C1-4435-B3EF-0390D0B81756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C5315A-62C1-4435-B3EF-0390D0B81756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C5315A-62C1-4435-B3EF-0390D0B81756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A376B5-B8A6-4D05-A8D0-5B4CE82B6E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A376B5-B8A6-4D05-A8D0-5B4CE82B6E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A376B5-B8A6-4D05-A8D0-5B4CE82B6E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A376B5-B8A6-4D05-A8D0-5B4CE82B6E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ECD9774-940E-4297-A8B6-7075F8F45B21}
+	EndGlobalSection
+EndGlobal
