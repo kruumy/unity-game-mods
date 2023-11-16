@@ -1,5 +1,4 @@
-﻿using AddFoVSettings;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine.Rendering.PostProcessing;
 
 namespace AdditionalGraphicalSettings.Settings

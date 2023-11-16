@@ -1,6 +1,6 @@
 ﻿using BepInEx.Logging;
 
-namespace AdditionalGraphicalSettings
+namespace BubbetBhopItemless
 {
     internal static class Log
     {

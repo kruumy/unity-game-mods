@@ -1,6 +1,4 @@
-﻿using AddFoVSettings;
-
-namespace AdditionalGraphicalSettings.Settings
+﻿namespace AdditionalGraphicalSettings.Settings
 {
     public abstract class CheckBoxGraphicalSetting : GraphicalSetting
     {

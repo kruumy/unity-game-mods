@@ -1,7 +1,7 @@
-﻿using AddFoVSettings;
-using System.Collections.Generic;
-using static AddFoVSettings.MenuCheckbox;
-using static AddFoVSettings.MenuSlider;
+﻿using System.Collections.Generic;
+using static AdditionalGraphicalSettings.MenuCheckbox;
+using static AdditionalGraphicalSettings.MenuSlider;
+
 
 namespace AdditionalGraphicalSettings.Settings
 {

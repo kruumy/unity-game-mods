@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastForward", "FastForward\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.StopDeletingMySave", "ProperSave.StopDeletingMySave\ProperSave.StopDeletingMySave.csproj", "{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoJump", "AutoJump\AutoJump.csproj", "{4D3C1042-E60B-410A-96F9-809EDC778979}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.CommandQueue", "ProperSave.CommandQueue\ProperSave.CommandQueue.csproj", "{AB3097B4-77AF-4438-B95B-514FF7283323}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandQueue.Freeze", "CommandQueue.Freeze\CommandQueue.Freeze.csproj", "{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}"
@@ -18,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunderstore.PackageManager", "Thunderstore.PackageManager\Thunderstore.PackageManager.csproj", "{61733852-03D0-4D16-AAB2-A1B866DA904E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdditionalGraphicalSettings", "AdditionalGraphicalSettings\AdditionalGraphicalSettings.csproj", "{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbetBhopItemless", "BubbetBhopItemless\BubbetBhopItemless.csproj", "{2B1EC121-742D-48DA-B994-E46B4A938A84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F84D99-B5CE-4E5B-A164-9D40EFEAA966}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D3C1042-E60B-410A-96F9-809EDC778979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D3C1042-E60B-410A-96F9-809EDC778979}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D3C1042-E60B-410A-96F9-809EDC778979}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D3C1042-E60B-410A-96F9-809EDC778979}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3097B4-77AF-4438-B95B-514FF7283323}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

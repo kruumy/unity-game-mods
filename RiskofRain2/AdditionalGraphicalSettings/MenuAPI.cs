@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 
 
-namespace AddFoVSettings
+namespace AdditionalGraphicalSettings
 {
     public enum SubPanel
     {
