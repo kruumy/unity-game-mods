@@ -1,3 +1,4 @@
+using AdditionalGraphicalSettings.Settings;
 using BepInEx;
 
 namespace AdditionalGraphicalSettings
@@ -16,10 +17,16 @@ namespace AdditionalGraphicalSettings
         public void Awake()
         {
             Log.Init(Logger);
-            new Settings.ColorGrading();
-            new Settings.Fog();
-            new Settings.MotionBlur();
-            new Settings.Vignette();
+
+            PostProcessingSetting[] settings =
+            [
+                new ColorGrading(),
+                new Fog(),
+                new MotionBlur(),
+                new Outline(),
+                new Vignette(),
+            ];
+
             Log.LogInfo(nameof(Awake) + " done.");
         }
     }
