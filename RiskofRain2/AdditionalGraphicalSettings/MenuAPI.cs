@@ -85,6 +85,10 @@ namespace AddFoVSettings
                     AddSettingField(self.submenuObject.transform);
             };
         }
+        public MenuSlider( float defaultValue, float maxValue, float minValue, bool wholeNumbers, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings, SliderChanged callback ) : this(defaultValue, maxValue, minValue, wholeNumbers, settingName, settingDescription, panelLocation, showInPauseSettings)
+        {
+            OnSliderChanged += callback;
+        }
 
         public float GetValue()
         {
@@ -217,6 +221,10 @@ namespace AddFoVSettings
             };
         }
 
+        public MenuCheckbox( bool defaultValue, string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings, CheckboxChanged callback ) : this(defaultValue, settingName, settingDescription, panelLocation, showInPauseSettings)
+        {
+            this.OnCheckboxChanged += callback;
+        }
         bool StringToBool( string s )
         {
             if ( s == null || s == "" )
@@ -235,8 +243,7 @@ namespace AddFoVSettings
         {
             value = newValue;
             PlayerPrefs.SetInt(token, Convert.ToInt32(newValue));
-            if ( OnCheckboxChanged != null )
-                OnCheckboxChanged.Invoke(value);
+            OnCheckboxChanged?.Invoke(value);
         }
 
         public delegate void CheckboxChanged( bool newValue );

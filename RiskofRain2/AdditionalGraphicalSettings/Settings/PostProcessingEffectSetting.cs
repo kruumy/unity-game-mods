@@ -6,7 +6,7 @@
         public PostProcessingEffectSetting()
         {
             Effect = Volume.profile.AddSettings<T>();
-            Effect.SetAllOverridesTo(true, false);
+            Effect.SetAllOverridesTo(false, false);
             Effect.active = false;
             Effect.enabled.value = false;
         }
