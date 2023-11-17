@@ -1,6 +1,6 @@
 ﻿namespace AdditionalGraphicalSettings.Settings
 {
-    public class SunOverride
+    public class Fog : PostProcessingEffectSetting<RampFog>
     {
     }
 }
