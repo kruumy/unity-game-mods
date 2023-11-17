@@ -1,4 +1,4 @@
-﻿using AddFoVSettings;
+﻿using AdditionalGraphicalSettings.MenuAPI;
 
 namespace AdditionalGraphicalSettings.Settings
 {
@@ -12,7 +12,7 @@ namespace AdditionalGraphicalSettings.Settings
             {
                 Effect.outlineIntensity.value = newValue;
             });
-            Scale = new MenuSlider(Effect.outlineScale, 100, 0, true, "SobelOutline Scale", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Scale = new MenuSlider(Effect.outlineScale, 100, 0, false, "SobelOutline Scale", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
             {
                 Effect.outlineScale.value = newValue;
             });

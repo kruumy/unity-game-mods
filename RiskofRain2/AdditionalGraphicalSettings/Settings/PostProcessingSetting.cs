@@ -3,7 +3,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace AdditionalGraphicalSettings.Settings
 {
-    public abstract class PostProcessingSetting
+    public abstract class PostProcessingSetting : Setting
     {
         protected static PostProcessVolume Volume { get; } = CreateBaseVolume();
 

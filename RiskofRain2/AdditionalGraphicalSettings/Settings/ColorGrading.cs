@@ -1,4 +1,4 @@
-﻿using AddFoVSettings;
+﻿using AdditionalGraphicalSettings.MenuAPI;
 
 namespace AdditionalGraphicalSettings.Settings
 {
