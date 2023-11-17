@@ -10,9 +10,11 @@ namespace AdditionalGraphicalSettings
         public const string PluginName = "AdditionalGraphicalSettings";
         public const string PluginVersion = "1.0.0";
 
-        public static AdditionalGraphicalSettings.Settings.ColorGrading ColorGrading { get; } = new AdditionalGraphicalSettings.Settings.ColorGrading();
-        public static AdditionalGraphicalSettings.Settings.MotionBlur MotionBlur { get; } = new AdditionalGraphicalSettings.Settings.MotionBlur();
-        public static AdditionalGraphicalSettings.Settings.Vignette Vignette { get; } = new AdditionalGraphicalSettings.Settings.Vignette();
+        public static Settings.ColorGrading ColorGrading { get; } = new Settings.ColorGrading();
+        public static Settings.MotionBlur MotionBlur { get; } = new Settings.MotionBlur();
+        public static Settings.Vignette Vignette { get; } = new Settings.Vignette();
+        public static Settings.FogOverride Fog { get; } = new Settings.FogOverride();
+        public static Settings.SunOverride Sun { get; } = new Settings.SunOverride();
         public void Awake()
         {
             Log.Init(Logger);

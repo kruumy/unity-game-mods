@@ -2,7 +2,7 @@
 {
     public class Vignette : ForEachEffectCheckBoxGraphicalSetting<UnityEngine.Rendering.PostProcessing.Vignette>
     {
-        public Vignette() : base(true, " Vignette", string.Empty)
+        public Vignette() : base(true, "Vignette", string.Empty)
         {
         }
     }

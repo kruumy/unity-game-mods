@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 
 
-namespace AdditionalGraphicalSettings
+namespace AddFoVSettings
 {
     public enum SubPanel
     {
@@ -199,7 +199,6 @@ namespace AdditionalGraphicalSettings
             if ( !PlayerPrefs.HasKey(token) )
             {
                 PlayerPrefs.SetInt(token, Convert.ToInt32(defaultValue));
-                Log.LogInfo("Added new token" + token);
             }
             SetValue(Convert.ToBoolean(PlayerPrefs.GetInt(token)));
 
@@ -222,7 +221,6 @@ namespace AdditionalGraphicalSettings
         {
             if ( s == null || s == "" )
             {
-                Log.LogError("string was null");
                 return false;
             }
             return Convert.ToBoolean(int.Parse(s));
@@ -264,7 +262,6 @@ namespace AdditionalGraphicalSettings
             {
                 SetValue(current);
                 controller.BoolCarousel();
-                Log.LogInfo("Bool Was Wrong");
             }
 
             controller.GetComponent<HGButton>().hoverToken = settingDescription;
@@ -284,7 +281,6 @@ namespace AdditionalGraphicalSettings
         void hook_BoolCarousel( On.RoR2.UI.CarouselController.orig_BoolCarousel orig, CarouselController self )
         {
             orig(self);
-            Log.LogInfo("Bool Switched");
             if ( self.nameToken == token )
             {
                 SetValue(!value);

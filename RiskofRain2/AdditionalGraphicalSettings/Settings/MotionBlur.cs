@@ -1,4 +1,5 @@
 ﻿
+using AddFoVSettings;
 using System;
 
 namespace AdditionalGraphicalSettings.Settings
