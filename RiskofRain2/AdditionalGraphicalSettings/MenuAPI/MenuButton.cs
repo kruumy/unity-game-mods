@@ -9,6 +9,10 @@ namespace AdditionalGraphicalSettings.MenuAPI
         public MenuButton( string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings = true ) : base(settingName, settingDescription, panelLocation, showInPauseSettings)
         {
         }
+        public MenuButton( string settingName, string settingDescription, SubPanel panelLocation, bool showInPauseSettings, UnityAction callback ) : this(settingName, settingDescription, panelLocation, showInPauseSettings)
+        {
+            OnButtonPressed += callback;
+        }
 
         public event UnityAction OnButtonPressed;
 
@@ -24,6 +28,7 @@ namespace AdditionalGraphicalSettings.MenuAPI
             UnityEngine.Object.Destroy(buttonCopy.GetComponent<CarouselController>());
             UnityEngine.Object.Destroy(buttonCopy.transform.FindChild("CarouselRect").gameObject);
             HGButton hgButton = buttonCopy.GetComponent<HGButton>();
+            hgButton.hoverToken = settingDescription;
             hgButton.onClick.RemoveAllListeners();
             hgButton.onClick.AddListener(OnButtonPressed);
             hgButton.disableGamepadClick = false;

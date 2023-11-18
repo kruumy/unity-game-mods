@@ -23,16 +23,14 @@ namespace AdditionalGraphicalSettings.MenuAPI
             }
             SetValue(PlayerPrefsGet());
             On.RoR2.UI.SettingsPanelController.RevertChanges += SettingsPanelController_RevertChanges;
-            On.RoR2.CameraRigController.OnEnable += CameraRigController_OnEnable;
+            RoR2.CameraRigController.onCameraEnableGlobal += CameraRigController_onCameraEnableGlobal;
         }
 
-        private void CameraRigController_OnEnable( On.RoR2.CameraRigController.orig_OnEnable orig, RoR2.CameraRigController self )
+        private void CameraRigController_onCameraEnableGlobal( RoR2.CameraRigController obj )
         {
             // temp fix to invoke onvaluechanged for each control on game start
-            orig.Invoke(self);
             SetValue(GetValue());
         }
-
         private void SettingsPanelController_RevertChanges( On.RoR2.UI.SettingsPanelController.orig_RevertChanges orig, SettingsPanelController self )
         {
             if ( !controller ) return;

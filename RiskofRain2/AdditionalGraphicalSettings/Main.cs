@@ -18,13 +18,15 @@ namespace AdditionalGraphicalSettings
         {
             Log.Init(Logger);
 
-            PostProcessingSetting[] settings =
+            Setting[] settings =
             [
                 new ColorGrading(),
                 new Fog(),
                 new MotionBlur(),
                 new Outline(),
-                new Vignette(),
+                new Sun(),
+                new RenderResolution(),
+                new RenderDistance()
             ];
 
             Log.LogInfo(nameof(Awake) + " done.");

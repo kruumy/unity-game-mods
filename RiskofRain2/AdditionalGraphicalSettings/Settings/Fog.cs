@@ -94,7 +94,7 @@ namespace AdditionalGraphicalSettings.Settings
             {
                 Effect.fogZero.value = newValue;
             });
-            SkyboxStrength = new MenuSlider(Effect.skyboxStrength, 1, 0, false, "RampFog Zero", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            SkyboxStrength = new MenuSlider(Effect.skyboxStrength, 1, 0, false, "RampFog Skybox Strength", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
             {
                 Effect.skyboxStrength.value = newValue;
             });
