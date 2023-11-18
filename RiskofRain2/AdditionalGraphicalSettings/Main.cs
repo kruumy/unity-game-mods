@@ -37,13 +37,9 @@ namespace AdditionalGraphicalSettings
             {
                 new Sun();
             }
-            if ( Config.Bind<bool>("General", "Enable RenderResolution Slider", true, string.Empty).Value )
+            if ( Config.Bind<bool>("General", "Enable RenderSettings Sliders (Render distance and Render Resolution)", true, string.Empty).Value )
             {
-                new RenderResolution();
-            }
-            if ( Config.Bind<bool>("General", "Enable RenderDistance Slider", true, string.Empty).Value )
-            {
-                new RenderDistance();
+                new RenderSettings();
             }
 
             Log.LogInfo(nameof(Awake) + " done.");

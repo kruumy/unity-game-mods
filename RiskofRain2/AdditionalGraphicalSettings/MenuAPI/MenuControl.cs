@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AdditionalGraphicalSettings.MenuAPI
 {
-    public abstract class MenuControl<T, SettingT> : MenuBase where SettingT : BaseSettingsControl
+    public abstract class MenuControl<T, SettingT> : MenuBase, IResetToDefault where SettingT : BaseSettingsControl
     {
         public T value;
         public T defaultValue;
@@ -107,6 +107,11 @@ namespace AdditionalGraphicalSettings.MenuAPI
         protected void InvokeOnValueChanged( T newValue )
         {
             OnValueChanged?.Invoke(newValue);
+        }
+
+        public void ResetToDefault()
+        {
+            SetValue(defaultValue);
         }
     }
 }

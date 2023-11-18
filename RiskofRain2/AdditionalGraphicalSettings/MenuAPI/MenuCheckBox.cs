@@ -34,7 +34,7 @@ namespace AdditionalGraphicalSettings.MenuAPI
             buttonCopy.transform.SetParent(gameplaySubPanel);
             buttonCopy.name = "SettingsEntryButton, Bool (" + settingName + ")";
             controller = buttonCopy.GetComponent<CarouselController>();
-            bool current = StringToBool(controller.GetCurrentValue());
+            bool current = Convert.ToBoolean(controller.selectionIndex);
 
             controller.settingName = settingName;
             controller.nameToken = token;
@@ -43,7 +43,6 @@ namespace AdditionalGraphicalSettings.MenuAPI
 
             if ( current != value )
             {
-                SetValue(current);
                 controller.BoolCarousel();
             }
 
@@ -51,12 +50,24 @@ namespace AdditionalGraphicalSettings.MenuAPI
             revertValue = value;
         }
 
+        public override void SetValue( bool newValue )
+        {
+            if ( controller != null && value != newValue )
+            {
+                controller.BoolCarousel();
+            }
+            else
+            {
+                base.SetValue(newValue);
+            }
+        }
+
         void hook_BoolCarousel( On.RoR2.UI.CarouselController.orig_BoolCarousel orig, CarouselController self )
         {
             orig(self);
             if ( self.nameToken == token )
             {
-                SetValue(!value);
+                base.SetValue(Convert.ToBoolean(self.selectionIndex));
             }
         }
     }

@@ -7,22 +7,23 @@ namespace AdditionalGraphicalSettings.Settings
         public T Effect { get; }
         public MenuCheckbox Override { get; }
         public MenuCheckbox Enable { get; }
-        public PostProcessingEffectSetting()
+        public PostProcessingEffectSetting() : base(typeof(T).Name)
         {
             Effect = Volume.profile.AddSettings<T>();
             Effect.SetAllOverridesTo(false, false);
             Effect.active = false;
             Effect.enabled.value = false;
 
-            Override = new MenuCheckbox(Effect.active, $"Override {typeof(T).Name}", string.Empty, SubPanel.Graphics, true, ( bool newValue ) =>
+            Override = CreateMenuCheckBoxWithResetToDefault(Effect.active, $"Override {typeof(T).Name}", string.Empty, true, ( bool newValue ) =>
             {
                 Effect.active = newValue;
                 Effect.SetAllOverridesTo(newValue, false);
             });
-            Enable = new MenuCheckbox(Effect.enabled.value, $"{typeof(T).Name} Enabled", string.Empty, SubPanel.Graphics, true, ( bool newValue ) =>
+            Enable = CreateMenuCheckBoxWithResetToDefault(Effect.enabled.value, $"{typeof(T).Name} Enabled", string.Empty, true, ( bool newValue ) =>
             {
                 Effect.enabled.value = newValue;
             });
+
         }
     }
 }

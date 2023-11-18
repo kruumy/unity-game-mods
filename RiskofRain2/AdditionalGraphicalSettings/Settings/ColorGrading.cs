@@ -19,55 +19,55 @@ namespace AdditionalGraphicalSettings.Settings
         public MenuSlider Tint { get; }
         public ColorGrading()
         {
-            Contrast = new MenuSlider(Effect.contrast, 100, -100, true, "Contrast", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Contrast = CreateMenuSliderWithResetToDefault(Effect.contrast, 100, -100, true, "Contrast", string.Empty, true, ( float newValue ) =>
             {
                 Effect.contrast.value = newValue;
             });
-            RedGain = new MenuSlider(Effect.gain.value.x, 10, 0, false, "Red Gain", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            RedGain = CreateMenuSliderWithResetToDefault(Effect.gain.value.x, 10, 0, false, "Red Gain", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gain.value.x = newValue;
             });
-            GreenGain = new MenuSlider(Effect.gain.value.y, 10, 0, false, "Green Gain", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            GreenGain = CreateMenuSliderWithResetToDefault(Effect.gain.value.y, 10, 0, false, "Green Gain", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gain.value.y = newValue;
             });
-            BlueGain = new MenuSlider(Effect.gain.value.z, 10, 0, false, "Blue Gain", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            BlueGain = CreateMenuSliderWithResetToDefault(Effect.gain.value.z, 10, 0, false, "Blue Gain", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gain.value.z = newValue;
             });
-            Gain = new MenuSlider(Effect.gain.value.w, 10, -2, false, "Gain", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Gain = CreateMenuSliderWithResetToDefault(Effect.gain.value.w, 10, -2, false, "Gain", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gain.value.w = newValue;
             });
-            RedGamma = new MenuSlider(Effect.gamma.value.x, 10, 0, false, "Red Gamma", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            RedGamma = CreateMenuSliderWithResetToDefault(Effect.gamma.value.x, 10, 0, false, "Red Gamma", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gamma.value.x = newValue;
             });
-            GreenGamma = new MenuSlider(Effect.gamma.value.y, 10, 0, false, "Green Gamma", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            GreenGamma = CreateMenuSliderWithResetToDefault(Effect.gamma.value.y, 10, 0, false, "Green Gamma", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gamma.value.y = newValue;
             });
-            BlueGamma = new MenuSlider(Effect.gamma.value.z, 10, 0, false, "Blue Gamma", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            BlueGamma = CreateMenuSliderWithResetToDefault(Effect.gamma.value.z, 10, 0, false, "Blue Gamma", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gamma.value.z = newValue;
             });
-            Gamma = new MenuSlider(Effect.gamma.value.w, 10, -2, false, "Gamma", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Gamma = CreateMenuSliderWithResetToDefault(Effect.gamma.value.w, 10, -2, false, "Gamma", string.Empty, true, ( float newValue ) =>
             {
                 Effect.gamma.value.w = newValue;
             });
-            HueShift = new MenuSlider(Effect.hueShift, 360, 0, true, "Hue Shift", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            HueShift = CreateMenuSliderWithResetToDefault(Effect.hueShift, 360, 0, true, "Hue Shift", string.Empty, true, ( float newValue ) =>
             {
                 Effect.hueShift.value = newValue;
             });
-            Saturation = new MenuSlider(Effect.saturation, 100, -100, true, "Saturation", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Saturation = CreateMenuSliderWithResetToDefault(Effect.saturation, 100, -100, true, "Saturation", string.Empty, true, ( float newValue ) =>
             {
                 Effect.saturation.value = newValue;
             });
-            Temperature = new MenuSlider(Effect.temperature, 100, -100, true, "Temperature", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Temperature = CreateMenuSliderWithResetToDefault(Effect.temperature, 100, -100, true, "Temperature", string.Empty, true, ( float newValue ) =>
             {
                 Effect.temperature.value = newValue;
             });
-            Tint = new MenuSlider(Effect.tint, 100, -100, true, "Tint", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            Tint = CreateMenuSliderWithResetToDefault(Effect.tint, 100, -100, true, "Tint", string.Empty, true, ( float newValue ) =>
             {
                 Effect.tint.value = newValue;
             });

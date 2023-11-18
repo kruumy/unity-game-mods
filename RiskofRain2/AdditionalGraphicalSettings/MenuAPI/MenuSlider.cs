@@ -26,9 +26,6 @@ namespace AdditionalGraphicalSettings.MenuAPI
             On.RoR2.UI.SettingsSlider.OnSliderValueChanged += hook_OnSliderValueChanged;
         }
 
-        public delegate void SliderChanged( float newValue );
-        public event SliderChanged OnSliderChanged;
-
         public override void SetValue( float newValue )
         {
             base.SetValue(newValue);

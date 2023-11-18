@@ -9,11 +9,11 @@ namespace AdditionalGraphicalSettings.Settings
         public MenuSlider ShutterAngle { get; }
         public MotionBlur()
         {
-            SampleCount = new MenuSlider(Effect.sampleCount, 64, 0, true, "MotionBlur Sample Count", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            SampleCount = CreateMenuSliderWithResetToDefault(Effect.sampleCount, 64, 0, true, "MotionBlur Sample Count", string.Empty, true, ( float newValue ) =>
             {
                 Effect.sampleCount.value = Convert.ToInt32(Math.Round(newValue));
             });
-            ShutterAngle = new MenuSlider(Effect.shutterAngle, 720, 0, true, "MotionBlur Shutter Angle", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            ShutterAngle = CreateMenuSliderWithResetToDefault(Effect.shutterAngle, 720, 0, true, "MotionBlur Shutter Angle", string.Empty, true, ( float newValue ) =>
             {
                 Effect.shutterAngle.value = newValue;
             });

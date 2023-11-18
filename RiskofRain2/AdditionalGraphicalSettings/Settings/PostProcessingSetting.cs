@@ -5,6 +5,10 @@ namespace AdditionalGraphicalSettings.Settings
 {
     public abstract class PostProcessingSetting : Setting
     {
+        protected PostProcessingSetting( string settingsGeneralName ) : base(settingsGeneralName, MenuAPI.SubPanel.Graphics)
+        {
+        }
+
         protected static PostProcessVolume Volume { get; } = CreateBaseVolume();
 
         private static PostProcessVolume CreateBaseVolume()
