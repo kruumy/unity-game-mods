@@ -13,21 +13,38 @@ namespace AdditionalGraphicalSettings
 
 
 
-
         public void Awake()
         {
             Log.Init(Logger);
 
-            Setting[] settings =
-            [
-                new ColorGrading(),
-                new Fog(),
-                new MotionBlur(),
-                new Outline(),
-                new Sun(),
-                new RenderResolution(),
-                new RenderDistance()
-            ];
+            if ( Config.Bind<bool>("General", "Enable ColorGrading Settings", true, string.Empty).Value )
+            {
+                new ColorGrading();
+            }
+            if ( Config.Bind<bool>("General", "Enable RampFog Settings", true, string.Empty).Value )
+            {
+                new Fog();
+            }
+            if ( Config.Bind<bool>("General", "Enable MotionBlur Settings", true, string.Empty).Value )
+            {
+                new MotionBlur();
+            }
+            if ( Config.Bind<bool>("General", "Enable SobelOutline Settings", true, string.Empty).Value )
+            {
+                new Outline();
+            }
+            if ( Config.Bind<bool>("General", "Enable Sun Settings", true, string.Empty).Value )
+            {
+                new Sun();
+            }
+            if ( Config.Bind<bool>("General", "Enable RenderResolution Slider", true, string.Empty).Value )
+            {
+                new RenderResolution();
+            }
+            if ( Config.Bind<bool>("General", "Enable RenderDistance Slider", true, string.Empty).Value )
+            {
+                new RenderDistance();
+            }
 
             Log.LogInfo(nameof(Awake) + " done.");
         }

@@ -1,5 +1,4 @@
 ﻿using AdditionalGraphicalSettings.MenuAPI;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +18,6 @@ namespace AdditionalGraphicalSettings.Settings
         public MenuSlider Green { get; }
         public MenuSlider Blue { get; }
         public MenuSlider ShadowSoftness { get; }
-        public MenuButton ReCopySun { get; }
         public Sun()
         {
             SceneManager.activeSceneChanged += ( Scene _, Scene _ ) => { CopySun(); };
@@ -60,23 +58,11 @@ namespace AdditionalGraphicalSettings.Settings
                     NewSun.color = new Color(NewSun.color.r, NewSun.color.g, newValue, NewSun.color.a);
                 }
             });
-            ShadowSoftness = new MenuSlider(1, 100, 0, false, "Sun Shadow Softness", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
+            ShadowSoftness = new MenuSlider(1, 35, 0, false, "Sun Shadow Softness", string.Empty, SubPanel.Graphics, true, ( float newValue ) =>
             {
                 if ( NewSunNGSS != null )
                 {
                     NewSunNGSS.NGSS_SHADOWS_SOFTNESS = newValue;
-                }
-            });
-            ReCopySun = new MenuButton("Recopy Sun Object", "Recopies the sun object to the overriding sun object. This is automaticlly done on every scene change, but you can do it manually if you changed one of the default shadow options above.", SubPanel.Graphics, true, () =>
-            {
-                CopySun();
-                var sliders = GetType()?.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance)?.Where(p => p.PropertyType == typeof(MenuSlider))?.Select(p => p.GetValue(this) as MenuSlider);
-                if ( sliders != null )
-                {
-                    foreach ( var slider in sliders )
-                    {
-                        slider?.SetValue(slider.GetValue());
-                    }
                 }
             });
 
