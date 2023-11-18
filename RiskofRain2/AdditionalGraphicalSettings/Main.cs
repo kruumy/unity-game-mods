@@ -9,7 +9,7 @@ namespace AdditionalGraphicalSettings
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "kruumy";
         public const string PluginName = "AdditionalGraphicalSettings";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.1.0";
 
 
 
