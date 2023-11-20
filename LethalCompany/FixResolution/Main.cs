@@ -1,19 +1,22 @@
-﻿using GameNetcodeStuff;
+﻿using BepInEx;
+using GameNetcodeStuff;
 using HarmonyLib;
-using MelonLoader;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace FixResolution
 {
-    public class Main : MelonMod
+    [BepInPlugin("kruumy.FixResolution", "Fix Resolution", "1.0.0")]
+    public class Main : BaseUnityPlugin
     {
-        private static MelonLogger.Instance Logger = null;
-        public override void OnLateInitializeMelon()
+        private void Awake()
         {
-            Logger = LoggerInstance;
+            HarmonyLib.Harmony.CreateAndPatchAll(typeof(Main));
+            SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         }
-        public override void OnSceneWasLoaded( int buildIndex, string sceneName )
+
+        private void SceneManager_activeSceneChanged( Scene arg0, Scene arg1 )
         {
             foreach ( UnityEngine.Object cameraobj in UnityEngine.Object.FindObjectsOfTypeAll(typeof(UnityEngine.Camera)) )
             {
@@ -24,39 +27,33 @@ namespace FixResolution
             }
         }
 
-        [HarmonyLib.HarmonyPatch(typeof(Camera), nameof(Camera.targetTexture), HarmonyLib.MethodType.Setter)]
-        class CameraTexturePatch
+        [HarmonyPatch(typeof(Camera), nameof(Camera.targetTexture), MethodType.Setter)]
+        [HarmonyPrefix]
+        private static void TargetTexturePrefix( UnityEngine.Camera __instance, ref UnityEngine.RenderTexture __0 )
         {
-            static void Prefix( UnityEngine.Camera __instance, ref UnityEngine.RenderTexture __0 )
+            if ( __0 != null && (__0.width != Screen.width || __0.height != Screen.height) )
             {
-                if ( __0 != null && (__0.width != Screen.width || __0.height != Screen.height) )
-                {
-                    __instance.targetTexture = null;
-                    __0.Release();
-                    __0.width = Screen.width;
-                    __0.height = Screen.height;
-                    __0.Create();
-                    Logger.Msg($"Set {__0.name} to {Screen.width}x{Screen.height}");
-                }
+                __instance.targetTexture = null;
+                __0.Release();
+                __0.width = Screen.width;
+                __0.height = Screen.height;
+                __0.Create();
             }
         }
 
-
         [HarmonyPatch(typeof(HUDManager), "UpdateScanNodes", new System.Type[] { typeof(PlayerControllerB) })]
-        class HUDManagerScanNodesPatch
+        [HarmonyPostfix]
+        private static void UpdateScanNodesPostfix( HUDManager __instance, PlayerControllerB playerScript )
         {
-            static void Postfix( HUDManager __instance, PlayerControllerB playerScript )
-            {
-                var scanNodesField = typeof(HUDManager).GetField("scanNodes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-                var scanNodes = (Dictionary<RectTransform, ScanNodeProperties>)scanNodesField.GetValue(__instance);
+            var scanNodesField = typeof(HUDManager).GetField("scanNodes", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            var scanNodes = (Dictionary<RectTransform, ScanNodeProperties>)scanNodesField.GetValue(__instance);
 
-                foreach ( RectTransform scan in __instance.scanElements )
+            foreach ( RectTransform scan in __instance.scanElements )
+            {
+                if ( scanNodes.TryGetValue(scan, out ScanNodeProperties scanNodeProperties) )
                 {
-                    if ( scanNodes.TryGetValue(scan, out ScanNodeProperties scanNodeProperties) )
-                    {
-                        Vector3 vector = playerScript.gameplayCamera.WorldToScreenPoint(scanNodeProperties.transform.position);
-                        scan.anchoredPosition = new Vector2((vector.x - (Screen.width / 2)) / 2, (vector.y - (Screen.height / 2)) / 2);
-                    }
+                    Vector3 vector = playerScript.gameplayCamera.WorldToScreenPoint(scanNodeProperties.transform.position);
+                    scan.anchoredPosition = new Vector2((vector.x - (Screen.width / 2)) / 2, (vector.y - (Screen.height / 2)) / 2);
                 }
             }
         }

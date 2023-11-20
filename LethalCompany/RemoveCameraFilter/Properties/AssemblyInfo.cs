@@ -1,4 +1,4 @@
-﻿using MelonLoader;
+﻿
 using System.Reflection;
 using System.Runtime.InteropServices;
 
@@ -14,8 +14,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(RemoveCameraFilter.Main), nameof(RemoveCameraFilter), "1.0.0", "kruumy")]
-[assembly: MelonGame("ZeekerssRBLX", "Lethal Company")]
 
 
 // Setting ComVisible to false makes the types in this assembly not visible

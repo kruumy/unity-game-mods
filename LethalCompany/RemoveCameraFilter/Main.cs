@@ -1,11 +1,18 @@
-﻿using MelonLoader;
+﻿using BepInEx;
 using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.SceneManagement;
 
 namespace RemoveCameraFilter
 {
-    public class Main : MelonMod
+    [BepInPlugin("kruumy.RemoveCameraFilter", "Remove Camera Filter", "1.0.0")]
+    public class Main : BaseUnityPlugin
     {
-        public override void OnSceneWasLoaded( int buildIndex, string sceneName )
+        private void Awake()
+        {
+            SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        }
+
+        private void SceneManager_activeSceneChanged( Scene arg0, Scene arg1 )
         {
             foreach ( var volumeobj in UnityEngine.Object.FindObjectsOfTypeAll(typeof(UnityEngine.Rendering.HighDefinition.CustomPassVolume)) )
             {
