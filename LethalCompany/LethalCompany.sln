@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomFOV", "CustomFOV\Cust
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveCameraFilter", "RemoveCameraFilter\RemoveCameraFilter.csproj", "{8119B276-5C2C-446F-A321-72045794DC73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixResolution", "FixResolution\FixResolution.csproj", "{E2208386-F58F-4318-BB88-AE3ECB7247F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8119B276-5C2C-446F-A321-72045794DC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8119B276-5C2C-446F-A321-72045794DC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8119B276-5C2C-446F-A321-72045794DC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2208386-F58F-4318-BB88-AE3ECB7247F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2208386-F58F-4318-BB88-AE3ECB7247F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2208386-F58F-4318-BB88-AE3ECB7247F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2208386-F58F-4318-BB88-AE3ECB7247F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
