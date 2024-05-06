@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProperSave.CommandQueue", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandQueue.Freeze", "CommandQueue.Freeze\CommandQueue.Freeze.csproj", "{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunderstore.PackageManager", "Thunderstore.PackageManager\Thunderstore.PackageManager.csproj", "{61733852-03D0-4D16-AAB2-A1B866DA904E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdditionalGraphicalSettings", "AdditionalGraphicalSettings\AdditionalGraphicalSettings.csproj", "{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbetBhopItemless", "BubbetBhopItemless\BubbetBhopItemless.csproj", "{2B1EC121-742D-48DA-B994-E46B4A938A84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThunderstoreUpdater", "ThunderstoreUpdater\ThunderstoreUpdater.csproj", "{79CBE72F-900D-483F-BFE1-8418AB1EDC68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +45,6 @@ Global
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619E7933-1DA0-4B86-81ED-5EE7F9B3D703}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61733852-03D0-4D16-AAB2-A1B866DA904E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FFCF42C-ED1F-4318-B8A7-B0D5B8EDE264}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1EC121-742D-48DA-B994-E46B4A938A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CBE72F-900D-483F-BFE1-8418AB1EDC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CBE72F-900D-483F-BFE1-8418AB1EDC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CBE72F-900D-483F-BFE1-8418AB1EDC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CBE72F-900D-483F-BFE1-8418AB1EDC68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

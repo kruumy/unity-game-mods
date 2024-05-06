@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61733852-03D0-4D16-AAB2-A1B866DA904E}</ProjectGuid>
+    <ProjectGuid>{79CBE72F-900D-483F-BFE1-8418AB1EDC68}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Thunderstore.PackageManager</RootNamespace>
-    <AssemblyName>Thunderstore.PackageManager</AssemblyName>
+    <RootNamespace>ThunderstoreUpdater</RootNamespace>
+    <AssemblyName>ThunderstoreUpdater</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,17 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectoryInfoExtensions.cs" />
-    <Compile Include="PackageManager.cs" />
+    <Compile Include="JSONParser.cs" />
+    <Compile Include="JSONWriter.cs" />
+    <Compile Include="Package.cs" />
+    <Compile Include="Plugin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PSTinyJson\DiscoverObjectTypeAttribute.cs" />
-    <Compile Include="PSTinyJson\JSONParser.cs" />
-    <Compile Include="PSTinyJson\JSONWriter.cs" />
-    <Compile Include="ThunderstoreApi\LocalPackage.cs" />
-    <Compile Include="ThunderstoreApi\Manifest.cs" />
-    <Compile Include="ThunderstoreApi\Package.cs" />
-    <Compile Include="ThunderstoreApi\Page.cs" />
+    <Compile Include="Version.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
