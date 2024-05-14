@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34818.151
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZoomOut", "ZoomOut\ZoomOut.csproj", "{9BD621F6-5877-4B74-9707-1CC0B0552AD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteAmmo", "InfiniteAmmo\InfiniteAmmo.csproj", "{9C46CABA-F2B6-431B-A5C3-C36A942CECCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BD621F6-5877-4B74-9707-1CC0B0552AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD621F6-5877-4B74-9707-1CC0B0552AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD621F6-5877-4B74-9707-1CC0B0552AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD621F6-5877-4B74-9707-1CC0B0552AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C46CABA-F2B6-431B-A5C3-C36A942CECCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C46CABA-F2B6-431B-A5C3-C36A942CECCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C46CABA-F2B6-431B-A5C3-C36A942CECCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C46CABA-F2B6-431B-A5C3-C36A942CECCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0D44AD5-68E5-4DF5-B4FC-28D7F81F980D}
+	EndGlobalSection
+EndGlobal
