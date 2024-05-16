@@ -14,14 +14,20 @@ namespace AutoShoot
         {
             GameEvents.OnNoteEvent += GameEvents_OnNoteEvent;
         }
+
+        private bool CanUseSpells()
+        {
+            return UserInterfaceReferences.Instant.UI_ModeSwapper.IsModeLoaded(UI_Mode.InGame) && !UserInterfaceReferences.Instant.UI_ModeSwapper.IsModeLoaded(UI_Mode.JukeboxLight) && !UserInterfaceReferences.Instant.UI_ModeSwapper.IsModeLoaded(UI_Mode.JukeboxRewind);
+        }
+
         private void GameEvents_OnNoteEvent()
         {
             SpellBook spellBook = (SpellBook)UnityEngine.Object.FindAnyObjectByType(typeof(SpellBook));
-            if( spellBook != null && InputManager.Instant.KeyHoldingDownLeftFire() )
+            if( spellBook != null && InputManager.Instant.KeyHoldingDownLeftFire() && CanUseSpells() )
             {
                 spellBook.ExecuteNextSpell(SpellType.SHOOT, ItemSlot.HandLeft);
             }
-            else if ( spellBook != null && InputManager.Instant.KeyHoldingDownRightFire() )
+            else if ( spellBook != null && InputManager.Instant.KeyHoldingDownRightFire() && CanUseSpells() )
             {
                 spellBook.ExecuteNextSpell(SpellType.SHOOT, ItemSlot.HandRight);
             }
