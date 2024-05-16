@@ -16,6 +16,7 @@ namespace MouseAimAssist
         {
             Harmony harmony = new Harmony("kruumy.MouseAimAssist");
             harmony.PatchAll(typeof(Patches));
+            
         }
     }
 }
