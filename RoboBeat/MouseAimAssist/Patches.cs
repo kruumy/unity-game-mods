@@ -13,12 +13,12 @@ namespace MouseAimAssist
     {
         [HarmonyLib.HarmonyPatch(typeof(MouseLook), "UpdateAimAssist")]
         [HarmonyLib.HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> UpdateAimAssistPrefix( IEnumerable<CodeInstruction> instructions )
+        public static IEnumerable<CodeInstruction> UpdateAimAssistTranspiler( IEnumerable<CodeInstruction> instructions )
         {
             bool startReturning = false;
             foreach ( var instruction in instructions )
             {
-                if ( !startReturning && instruction.opcode == OpCodes.Ldarg_0 )
+                if ( !startReturning && instruction.opcode == OpCodes.Ldarg_0 ) // if (!this.AimbotEnabled)
                 {
                     startReturning = true;
                 }
