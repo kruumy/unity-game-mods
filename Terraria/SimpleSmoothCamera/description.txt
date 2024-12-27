@@ -1,0 +1,1 @@
+Smooth out the default camera movement. A complete rework of the camera update method and also highly configurable.

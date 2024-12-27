@@ -1,0 +1,4 @@
+displayName = Black Background During Boss
+author = kruumy
+version = 0.1
+side = Client

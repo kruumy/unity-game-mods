@@ -1,0 +1,1 @@
+Whenever a boss is alive, background goes black for easier visability, just like with the Supreme Calamitas fight.

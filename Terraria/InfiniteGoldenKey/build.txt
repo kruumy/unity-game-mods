@@ -1,0 +1,3 @@
+displayName = Infinite Golden Key
+author = kruumy
+version = 0.1

@@ -1,0 +1,4 @@
+displayName = Always Pointing Gun
+author = kruumy
+version = 0.1
+side = Client

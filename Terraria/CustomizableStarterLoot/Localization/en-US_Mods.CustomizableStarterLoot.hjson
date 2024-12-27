@@ -1,0 +1,15 @@
+Configs: {
+	Config: {
+		DisplayName: Config
+
+		PrefixedItems: {
+			Label: Prefixed Items
+			Tooltip: ""
+		}
+
+		StackedItems: {
+			Label: Stacked Items
+			Tooltip: ""
+		}
+	}
+}

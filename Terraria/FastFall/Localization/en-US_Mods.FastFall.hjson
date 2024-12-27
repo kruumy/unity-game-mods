@@ -1,0 +1,40 @@
+Configs: {
+	Config: {
+		DisplayName: Config
+
+		FastFallVelocityMultiplier: {
+			Label: Fast Fall Velocity Multiplier
+			Tooltip: ""
+		}
+
+		DisableShadowEffect: {
+			Label: Disable Shadow Effect
+			Tooltip: ""
+		}
+
+		DisableGroundPounding: {
+			Label: Disable Ground Pounding
+			Tooltip: ""
+		}
+
+		PlayerKnockBackOnGroundPound: {
+			Label: Player Knock Back On Ground Pound
+			Tooltip: ""
+		}
+
+		EnemyKnockBackOnGroundPound: {
+			Label: Enemy Knock Back On Ground Pound
+			Tooltip: ""
+		}
+
+		BaseEnemyDamageOnGroundPound: {
+			Label: Base Enemy Damage On Ground Pound
+			Tooltip: ""
+		}
+
+		TickFastFallDelayOnGroundPound: {
+			Label: Tick Fast Fall Delay On Ground Pound
+			Tooltip: ""
+		}
+	}
+}

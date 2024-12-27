@@ -1,0 +1,5 @@
+displayName = Magic Storage Research
+author = kruumy
+modReferences = MagicStorage
+version = 0.2
+side = Client

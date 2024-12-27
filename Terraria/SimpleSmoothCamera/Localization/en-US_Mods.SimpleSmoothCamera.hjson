@@ -1,0 +1,40 @@
+Configs: {
+	Config: {
+		DisplayName: Config
+
+		MouseInfluence: {
+			Label: Mouse Influence
+			Tooltip: ""
+		}
+
+		FollowSpeed: {
+			Label: Follow Speed
+			Tooltip: ""
+		}
+
+		DampingFactor: {
+			Label: Damping Factor
+			Tooltip: ""
+		}
+
+		MouseInfluenceOnUse: {
+			Label: Mouse Influence On Use
+			Tooltip: ""
+		}
+
+		EnableMouseInfluenceOnUse: {
+			Label: Enable Mouse Influence On Use
+			Tooltip: ""
+		}
+
+		EnableMouseInfluenceOnRightClick: {
+			Label: Enable Mouse Influence On Right Click
+			Tooltip: ""
+		}
+
+		MouseInfluenceOnRightClick: {
+			Label: Mouse Influence On Right Click
+			Tooltip: ""
+		}
+	}
+}

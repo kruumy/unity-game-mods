@@ -1,0 +1,4 @@
+displayName = Scroll Zoom
+author = kruumy
+version = 0.1
+side = Client

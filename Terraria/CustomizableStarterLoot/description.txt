@@ -1,0 +1,1 @@
+A super simple mod that allows you to easily configure additional items you spawn with when creating a character.

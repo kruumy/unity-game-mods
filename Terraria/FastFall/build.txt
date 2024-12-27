@@ -1,0 +1,3 @@
+displayName = Fast Fall
+author = kruumy
+version = 0.3

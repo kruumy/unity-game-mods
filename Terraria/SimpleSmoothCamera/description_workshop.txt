@@ -1,0 +1,6 @@
+﻿[h1]Simple Smooth Camera[/h1]
+Smooth out the default camera movement. A complete rework of the camera update method and also highly configurable.
+Note: This is only a basic implementation right now. Other things that mess with the camera's postion in-game, besides the player movement, is not implmented yet. This includes the binoculars and any other camera altering equipment.
+
+This mod is inspired by the smooth camera from Terraria Overhaul By Mirsario.
+This mod also supports High FPS Support by Stellar.

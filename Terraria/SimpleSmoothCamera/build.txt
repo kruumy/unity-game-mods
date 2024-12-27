@@ -1,0 +1,4 @@
+displayName = Simple Smooth Camera
+author = kruumy
+version = 0.5
+side = Client

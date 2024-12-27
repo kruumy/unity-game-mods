@@ -1,0 +1,4 @@
+displayName = Customizable Starter Loot
+author = kruumy
+version = 0.4
+side = Client

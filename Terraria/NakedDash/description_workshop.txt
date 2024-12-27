@@ -1,0 +1,3 @@
+﻿[h1]Naked Dash[/h1]
+Give you a small dash ability even when having no dash equipment or armor.
+The implementation of this feature should make it work with other hotkey mods that add a dash hotkey. Tested and confirmed to work with Helpful Hotkeys by jopojelly.

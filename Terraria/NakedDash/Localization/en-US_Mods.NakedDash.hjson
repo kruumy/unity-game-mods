@@ -1,0 +1,20 @@
+Configs: {
+	Config: {
+		DisplayName: Config
+
+		DashPower: {
+			Label: Dash Power
+			Tooltip: ""
+		}
+
+		DashDelay: {
+			Label: Dash Delay
+			Tooltip: ""
+		}
+
+		DisableNakedDash: {
+			Label: Disable Naked Dash
+			Tooltip: ""
+		}
+	}
+}

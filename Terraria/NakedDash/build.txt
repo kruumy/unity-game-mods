@@ -1,0 +1,3 @@
+displayName = Naked Dash
+author = kruumy
+version = 0.5
