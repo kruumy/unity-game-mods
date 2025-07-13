@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllTrophyStoreItemsUnlocker", "AllTrophyStoreItemsUnlocker\AllTrophyStoreItemsUnlocker.csproj", "{CBFC40CC-874C-4280-A365-2EE382F0BE72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeShops", "FreeShops\FreeShops.csproj", "{8B8EA41E-F759-43C1-933D-648A92B914E9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImNotHacking", "ImNotHacking\ImNotHacking.csproj", "{20BC24A4-B09C-4F29-895D-E16E952489F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideDoubleCash", "HideDoubleCash\HideDoubleCash.csproj", "{B2E8A436-A476-45AC-BC7B-82392E718977}"
@@ -21,10 +19,6 @@ Global
 		{CBFC40CC-874C-4280-A365-2EE382F0BE72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBFC40CC-874C-4280-A365-2EE382F0BE72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBFC40CC-874C-4280-A365-2EE382F0BE72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8B8EA41E-F759-43C1-933D-648A92B914E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B8EA41E-F759-43C1-933D-648A92B914E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B8EA41E-F759-43C1-933D-648A92B914E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B8EA41E-F759-43C1-933D-648A92B914E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{20BC24A4-B09C-4F29-895D-E16E952489F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{20BC24A4-B09C-4F29-895D-E16E952489F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20BC24A4-B09C-4F29-895D-E16E952489F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
