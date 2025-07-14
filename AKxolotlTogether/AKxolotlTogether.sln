@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36212.18 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltraWideFix", "UltraWideFix\UltraWideFix.csproj", "{77E10F92-1EE2-466C-B7ED-55E030E0B7B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmootherGame", "SmootherGame\SmootherGame.csproj", "{9B7E4217-8239-4B19-86BC-7C798CC04DD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77E10F92-1EE2-466C-B7ED-55E030E0B7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E10F92-1EE2-466C-B7ED-55E030E0B7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E10F92-1EE2-466C-B7ED-55E030E0B7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E10F92-1EE2-466C-B7ED-55E030E0B7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B7E4217-8239-4B19-86BC-7C798CC04DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B7E4217-8239-4B19-86BC-7C798CC04DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B7E4217-8239-4B19-86BC-7C798CC04DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B7E4217-8239-4B19-86BC-7C798CC04DD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C0EDEF8-153C-4B01-B939-0EDF027A4640}
+	EndGlobalSection
+EndGlobal
