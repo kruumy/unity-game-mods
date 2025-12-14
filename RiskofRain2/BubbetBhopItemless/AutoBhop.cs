@@ -8,7 +8,7 @@ namespace BubbetBhopItemless
         public static ConfigEntry<bool> EnableAutoBhop;
         public static void Init( ConfigFile config )
         {
-            EnableAutoBhop = config.Bind<bool>("General", "Enable AutoBhop", false, "Hold down [JUMP] to auto jump instead of timing jumps for bhops.");
+            EnableAutoBhop = config.Bind<bool>("General", "Enable AutoBhop", true, "Hold down [JUMP] to auto jump instead of timing jumps for bhops.");
             if ( EnableAutoBhop.Value == true )
             {
                 On.EntityStates.GenericCharacterMain.GatherInputs += GenericCharacterMain_GatherInputs;
@@ -18,7 +18,7 @@ namespace BubbetBhopItemless
         private static void GenericCharacterMain_GatherInputs( On.EntityStates.GenericCharacterMain.orig_GatherInputs orig, GenericCharacterMain self )
         {
             orig.Invoke(self);
-            if ( self.hasInputBank )
+            if ( self.hasInputBank && self.isGrounded)
             {
                 self.jumpInputReceived = self.inputBank.jump.down;
             }

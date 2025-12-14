@@ -8,7 +8,7 @@ namespace BubbetBhopItemless
         public const string PluginGUID = PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "kruumy";
         public const string PluginName = "Bubbet_Bhop_Itemless";
-        public const string PluginVersion = "1.0.8";
+        public const string PluginVersion = "1.0.10";
         public void Awake()
         {
             Log.Init(Logger);
