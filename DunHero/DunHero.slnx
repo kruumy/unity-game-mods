@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="SmoothGameplay/SmoothGameplay.csproj" />
+  <Project Path="SmoothGameplay/SmoothGameplay.csproj" Id="fcdb0336-fd9d-46b6-bd62-7016bf7a6813" />
+  <Project Path="UltrawideFix/UltrawideFix.csproj" Id="c77d1e98-147e-41b2-825e-3fa0b3d1a907" />
 </Solution>
