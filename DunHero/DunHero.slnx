@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="MiscQOL/MiscQOL.csproj" Id="955e07ec-f61b-4973-b337-ac33df29af0b" />
   <Project Path="SmoothGameplay/SmoothGameplay.csproj" Id="fcdb0336-fd9d-46b6-bd62-7016bf7a6813" />
   <Project Path="UltrawideFix/UltrawideFix.csproj" Id="c77d1e98-147e-41b2-825e-3fa0b3d1a907" />
 </Solution>
