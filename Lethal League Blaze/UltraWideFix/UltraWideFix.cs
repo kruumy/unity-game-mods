@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using System;
 using UnityEngine;
 
 namespace UltraWideFix
@@ -10,7 +9,7 @@ namespace UltraWideFix
     {
         public readonly float aspect = Screen.width / Screen.height;
         public readonly Rect pixelRect = new Rect(0, 0, Screen.width, Screen.height);
-        public void LateUpdate()
+        public void FixedUpdate()
         {
             foreach (var camera in UnityEngine.Camera.allCameras)
             {
