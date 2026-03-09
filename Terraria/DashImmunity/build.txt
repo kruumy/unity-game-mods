@@ -1,0 +1,3 @@
+displayName = Dash Immunity
+author = kruumy
+version = 0.1
